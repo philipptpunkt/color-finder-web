@@ -1,0 +1,33 @@
+.grid-dashboard {
+  display: grid;
+  gap: 24px;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-areas:
+    "revenue"
+    "sales"
+    "activeNow"
+    "registrations"
+    "graph"
+    "transactions";
+}
+
+@media (min-width: 768px) {
+  .grid-dashboard {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "revenue sales"
+      "activeNow registrations"
+      "graph graph"
+      "transactions transactions";
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-dashboard {
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas:
+      "revenue revenue sales sales activeNow activeNow registrations registrations"
+      "graph graph graph graph graph transactions transactions transactions";
+  }
+}

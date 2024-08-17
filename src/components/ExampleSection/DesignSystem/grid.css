@@ -1,0 +1,24 @@
+.grid-design-system {
+  display: grid;
+  gap: 24px;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-areas:
+    "buttonsContained"
+    "buttonsOutlined"
+    "buttonsText";
+}
+
+@media (min-width: 768px) {
+  .grid-design-system {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "buttonsContained buttonsOutlined buttonsText";
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-design-system {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "buttonsContained buttonsOutlined buttonsText";
+  }
+}

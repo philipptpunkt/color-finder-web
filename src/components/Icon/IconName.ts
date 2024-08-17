@@ -1,0 +1,15 @@
+export enum IconName {
+  icArrowBendDownRight = "icArrowBendDownRight",
+  icArrowBendUpLeft = "icArrowBendUpLeft",
+  icArrowClockwise = "icArrowClockwise",
+  icChartLine = "icChartLine",
+  icCurrencyDollarSimple = "icCurrencyDollarSimple",
+  icFaders = "icFaders",
+  icMoon = "icMoon",
+  icPaperPlaneTilt = "icPaperPlaneTilt",
+  icPlus = "icPlus",
+  icPulse = "icPulse",
+  icSun = "icSun",
+  icUser = "icUser",
+  icUsers = "icUsers",
+}
