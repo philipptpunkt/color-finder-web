@@ -9,6 +9,9 @@ export function HeaderSection() {
           Play around with different colors or just enter your favorite one.
         </p>
       </div>
+      {/* <div className="w-[400px] h-[400px] bg-white flex justify-center items-center">
+        <div className="w-[400px] h-[400px] rainbow-circle rounded-full" />
+      </div> */}
     </div>
   )
 }

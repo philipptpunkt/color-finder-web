@@ -6,9 +6,9 @@ import { Dashboard } from "./Examples/Dashboard/Dashboard"
 import { ImageGradientCard } from "./Examples/Cards/ImageGradientCard"
 import { InputCard } from "./Examples/Cards/InputCard"
 import { ImageInfoCard } from "./Examples/Cards/ImageInfoCard"
-import "./grid.css"
 import { GradientCard } from "./Examples/Cards/GradientCard"
 import { Card } from "./Examples/Card/Card"
+import "./grid.css"
 
 function Placeholder() {
   return (
