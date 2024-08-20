@@ -1,0 +1,63 @@
+name: Continuous Integration
+
+on: [pull_request]
+
+jobs:
+  linting:
+    name: Run Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+          cache: "npm"
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Lint
+        run: npm run lint
+
+  type-check:
+    name: Run Type Checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+          cache: "npm"
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Type Check
+        run: npm run type-check
+
+  # check-commit-message:
+  #   name: Check Commit Message
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Check Commit Type
+  #       uses: gsactions/commit-message-checker@v2
+  #       with:
+  #         excludeTitle: true
+  #         excludeDescription: true
+  #         checkAllCommitMessages: true
+  #         accessToken: ${{ secrets.GITHUB_TOKEN }}
+  #         pattern: '^(Revert
+  #           ")?(feat|fix|docs|style|refactor|perf|test|workflow|ci|chore|types|build|wip|merge|release)(\((INV|QA)-\d+\))?:\s.+'
+  #         flags: 'gm'
+  #         error: 'Your commit message should be of the format
+  #           `[type](INV-ticket_number): brief description of the changes`'
