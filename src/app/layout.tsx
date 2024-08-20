@@ -1,15 +1,15 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
-import "./globals.css"
 import { ThemeProvider } from "next-themes"
-import { ThemeToggle } from "@/components/ThemeChanger/ThemeToogle"
-import { ColorWheel } from "@/components/ColorWheel/ColorWheel"
+import { Navigation } from "@/components/Navigation/Navigation"
+import "./globals.css"
+import { Footer } from "@/components/Footer/Footer"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Color Theme Picker",
-  description: `Try out different colors and how they work with components. There are several example components privided which will respond to your color pick. Light and Dark mode are available as well of course.`,
+  title: "Color Finder",
+  description: `Find and create perfect color palettes with Color Finder. Our intuitive tool helps designers and developers generate, preview, and apply color variations in real-time. Enhance your projects with the ideal color scheme using Color Finder at colorfinder.app.`,
 }
 
 export default function RootLayout({
@@ -22,8 +22,8 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider attribute="class">
           {children}
-          <ColorWheel />
-          <ThemeToggle />
+          <Navigation />
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

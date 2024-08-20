@@ -8,11 +8,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
     },
-    // {
-    //   url: "https://allcolors.tech/legal-notice",
-    //   lastModified: new Date(),
-    //   changeFrequency: "monthly",
-    //   priority: 0.5,
-    // },
+    {
+      url: "https://allcolors.tech/legal-notice",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
   ]
 }

@@ -29,13 +29,13 @@ export function Chat() {
           />
         </div>
 
-        <p className="self-start max-w-[75%] text-sm bg-custom-50 dark:bg-custom-800 rounded-md py-2 px-3">
+        <p className="self-start max-w-[75%] text-sm bg-custom-50 dark:bg-custom-950 rounded-md py-2 px-3">
           Hey, how about dinner tonight?
         </p>
         <p className="self-end max-w-[75%] text-sm bg-custom-500 dark:bg-custom-500 rounded-md py-2 px-3 text-text-inverse-light dark:text-text-inverse-dark">
           Sounds good, do you have a place in mind?
         </p>
-        <p className="self-start max-w-[75%] text-sm bg-custom-50 dark:bg-custom-800 rounded-md py-2 px-3">
+        <p className="self-start max-w-[75%] text-sm bg-custom-50 dark:bg-custom-950 rounded-md py-2 px-3">
           I wanted to try out the new sushi place downtown. Should I make a
           reservation?
         </p>

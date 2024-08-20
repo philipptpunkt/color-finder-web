@@ -24,7 +24,7 @@ export function ImageCard() {
               "bg-slate-800 dark:bg-slate-900",
               "flex justify-center items-center",
               {
-                "rounded-2xl": rounded,
+                "rounded-xl": rounded,
               }
             )}
           >

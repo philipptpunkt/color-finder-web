@@ -45,11 +45,8 @@ export function ColorInputSection() {
   }, [createQueryString, pathname, router, input])
 
   return (
-    <>
-      <div
-        className="sticky top-0 flex justify-center bg-background-light dark:bg-background-dark w-full p-4 z-20 px-24"
-        id="input-container"
-      >
+    <div className="flex justify-center w-full mb-8">
+      <div className="flex justify-center w-full max-w-[1200px] p-4 rounded-md bg-slate-200 dark:bg-slate-900 mt-[3px]">
         <input
           type="text"
           value={input}
@@ -59,11 +56,11 @@ export function ColorInputSection() {
             "py-2 px-3 w-full max-w-[400px]",
             "border-2 border-border-light hover:border-border-light-hover dark:border-border-dark hover:dark:border-border-dark-hover",
             "focus:outline-none focus:border-custom-500",
-            "rounded-lg bg-slate-50 dark:bg-slate-900"
+            "rounded-lg bg-slate-50 dark:bg-slate-800"
           )}
           placeholder="Enter a hex color"
         />
       </div>
-    </>
+    </div>
   )
 }

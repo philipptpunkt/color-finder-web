@@ -19,11 +19,11 @@ export function ThemeToggle() {
   const isDarkMode = theme === "dark"
 
   return (
-    <div className="fixed top-3 right-6 z-20">
-      <IconButton
-        iconName={isDarkMode ? IconName.icSun : IconName.icMoon}
-        onClick={() => setTheme(isDarkMode ? "light" : "dark")}
-      />
-    </div>
+    <IconButton
+      iconName={isDarkMode ? IconName.icSun : IconName.icMoon}
+      onClick={() => setTheme(isDarkMode ? "light" : "dark")}
+      backgroundColor="bg-slate-900 dark:bg-slate-800 hover:bg-slate-700 hover:dark:bg-slate-700"
+      color="text-text-inverse-light"
+    />
   )
 }
