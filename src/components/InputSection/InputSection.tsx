@@ -40,7 +40,9 @@ export function ColorInputSection() {
 
   useEffect(() => {
     if (chroma.valid(input)) {
-      router.push(pathname + "?" + createQueryString("hex", input))
+      router.push(pathname + "?" + createQueryString("hex", input), {
+        scroll: false,
+      })
     }
   }, [createQueryString, pathname, router, input])
 
