@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     siteName: "Color Finder",
     images: [
       {
-        url: "https://colorfinder.app/api/images/colorFinderOpenGraph?w=1980&q=90",
+        url: "https://colorfinder.app/api/image/colorFinderOpenGraph?w=1280&q=90",
         alt: "Color Finder Preview Image",
       },
     ],
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description:
       "Find, create and test perfect color palettes with Color Finder.",
     images: [
-      "https://colorfinder.app/api/images/colorFinderOpenGraph?w=1980&q=90",
+      "https://colorfinder.app/api/image/colorFinderOpenGraph?w=1280&q=90",
     ],
   },
 }
