@@ -7,11 +7,14 @@ const COLOR_FINDER_URL = "https://www.colorfinder.app"
 
 const maxAge = 60 * 60 * 24 * 7 // 7 days
 
-const DEFAULT_WIDTH = 1024
+const DEFAULT_WIDTH = 1080
 const DEFAULT_QUALITY = 75
 
-const allowedWidths = [320, 640, 800, 1024, 1280, 1600, 1920, 2048]
-const allowedQualities = [50, 75, 90, 100]
+const allowedWidths = [
+  16, 32, 48, 64, 96, 128, 256, 384, 640, 750, 828, 1080, 1200, 1920, 2048,
+  3840,
+]
+const allowedQualities = [25, 50, 75, 90, 100]
 
 const getClosestValue = (value: number, allowedValues: number[]): number => {
   return allowedValues.reduce((prev, curr) =>
