@@ -47,12 +47,20 @@ RUN chown nextjs:nodejs .next
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
+# Install the next.js plugin after it copies the standalone server and static bits to workdir
+# Nextjs removes unnecessary files and New Relic is not directly referenced.
+# This however slows down the Docker pipeline and should be replaced with a better solution
+RUN npm i @newrelic/next
+
 USER nextjs
 
 EXPOSE 3000
 
 ENV PORT=3000
 
+ENV NEW_RELIC_APP_NAME=$NEW_RELIC_APP_NAME
+ENV NEW_RELIC_LICENSE_KEY=$NEW_RELIC_LICENSE_KEY
+
 # server.js is created by next build from the standalone output
 # https://nextjs.org/docs/pages/api-reference/next-config-js/output
-CMD HOSTNAME="0.0.0.0" node server.js
+CMD NEW_RELIC_APP_NAME=$NEW_RELIC_APP_NAME NEW_RELIC_LICENSE_KEY=$NEW_RELIC_LICENSE_KEY HOSTNAME="0.0.0.0" node -r @newrelic/next  server.js
