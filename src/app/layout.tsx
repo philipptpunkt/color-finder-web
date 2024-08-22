@@ -1,4 +1,6 @@
 import type { Metadata } from "next"
+import newrelic from "newrelic"
+import Script from "next/script"
 import { Inter } from "next/font/google"
 import { ThemeProvider } from "next-themes"
 import { Navigation } from "@/components/Navigation/Navigation"
@@ -36,11 +38,15 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const browserTimingHeader = newrelic.getBrowserTimingHeader({
+    hasToRemoveScriptWrapper: true,
+  })
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
@@ -49,6 +55,11 @@ export default function RootLayout({
           <Navigation />
           <Footer />
         </ThemeProvider>
+        <Script
+          id="nr-browser-agent"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: browserTimingHeader }}
+        />
       </body>
     </html>
   )
