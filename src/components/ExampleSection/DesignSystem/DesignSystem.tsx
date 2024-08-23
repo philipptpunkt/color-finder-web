@@ -6,7 +6,7 @@ import "./grid.css"
 export function DesignSystem() {
   return (
     <div>
-      <h2 className="my-4 uppercase">Design System</h2>
+      <h2 className="my-4">Design System</h2>
       <div className="grid-design-system">
         <div style={{ gridArea: "buttonsContained" }}>
           <ButtonsContained />

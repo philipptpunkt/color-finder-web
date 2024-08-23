@@ -26,7 +26,7 @@ export function ExampleSection() {
   return (
     <div className="flex justify-center">
       <div className="w-full max-w-[1200px] px-4 py-8">
-        <h2 className="my-4 uppercase">Example Components</h2>
+        <h2 className="my-4">Example Components</h2>
         <div className="grid-examples">
           <div style={{ gridArea: "gradientCard" }}>
             <GradientCard />

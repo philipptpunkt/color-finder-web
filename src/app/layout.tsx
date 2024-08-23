@@ -10,12 +10,12 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Color Finder",
-  description: `Find and create perfect color palettes with Color Finder. Our intuitive tool helps designers and developers generate, preview, and apply color variations in real-time. Enhance your projects with the ideal color scheme using Color Finder at colorfinder.app.`,
+  title: "Color Finder - Create Color Palettes Easily",
+  description: `Find and create color palettes that match Tailwind CSS color palettes with Color Finder. Our intuitive tool helps designers and developers generate, preview, and apply color variations in real-time. Enhance your projects with the ideal color scheme using Color Finder at colorfinder.app.`,
   openGraph: {
-    title: "Color Finder - Find Your Perfect Color",
+    title: "Color Finder - Create Color Palettes Easily",
     description:
-      "Find and create perfect color palettes with Color Finder. Our tool helps you generate, preview, and apply color variations in real-time.",
+      "Find and create color palettes with Color Finder. Our tool helps you generate, preview, and apply color variations in real-time.",
     url: "https://colorfinder.app",
     siteName: "Color Finder",
     images: [
@@ -29,9 +29,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Color Finder - Find Your Perfect Color",
-    description:
-      "Find, create and test perfect color palettes with Color Finder.",
+    title: "Color Finder - Create Color Palettes Easily",
+    description: "Find, create and test your color palettes with Color Finder.",
     images: [
       "https://colorfinder.app/api/image/colorFinderOpenGraph?w=1200&q=90",
     ],

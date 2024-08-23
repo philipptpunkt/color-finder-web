@@ -10,7 +10,7 @@ function ColorContainer({ children }: { children: React.ReactNode }) {
   return (
     <div className="lg:flex lg:flex-col lg:items-center">
       <div className="w-full lg:max-w-[1200px]">
-        <h2 className="px-4 my-4 uppercase">Generated Colors</h2>
+        <h2 className="px-4 my-4">Generated Colors</h2>
         <div className="flex flex-col sm:flex-row">{children}</div>
       </div>
     </div>
