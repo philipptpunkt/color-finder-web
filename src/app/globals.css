@@ -3,6 +3,14 @@
 @tailwind utilities;
 
 @layer base {
+  root {
+    overflow: auto;
+  }
+
+  :root:has(.no-document-scroll) {
+    overflow: hidden;
+  }
+
   body {
     @apply font-light text-text-light dark:text-text-dark bg-background-light dark:bg-background-dark;
   }

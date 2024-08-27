@@ -2,28 +2,22 @@
 
 import { cn } from "@/utils/cn"
 import chroma from "chroma-js"
-import { usePathname, useSearchParams, useRouter } from "next/navigation"
-import { useCallback, useEffect, useState } from "react"
+import { usePathname, useRouter } from "next/navigation"
+import { useEffect, useState } from "react"
+import { ColorPicker } from "./ColorPicker"
+import { useSearchParams } from "@/utils/useSearchParams"
 
 export function ColorInputSection() {
   const router = useRouter()
   const pathname = usePathname()
-  const searchParams = useSearchParams()
+  const { searchParams, createQueryString } = useSearchParams()
 
   const hexValueFromQuery = searchParams.get("hex")
 
-  const createQueryString = useCallback(
-    (name: string, value: string) => {
-      const params = new URLSearchParams(searchParams.toString())
-      params.set(name, value)
-
-      return params.toString()
-    },
-    [searchParams]
-  )
-
   const [input, setInput] = useState(
-    typeof hexValueFromQuery === "string" ? hexValueFromQuery : ""
+    typeof hexValueFromQuery === "string" && chroma.valid(hexValueFromQuery)
+      ? hexValueFromQuery
+      : ""
   )
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -37,6 +31,16 @@ export function ColorInputSection() {
 
     setInput(test)
   }
+
+  useEffect(() => {
+    if (
+      input !== hexValueFromQuery &&
+      hexValueFromQuery &&
+      chroma.valid(hexValueFromQuery)
+    ) {
+      setInput(hexValueFromQuery)
+    }
+  }, [hexValueFromQuery])
 
   useEffect(() => {
     if (chroma.valid(input)) {
@@ -56,12 +60,14 @@ export function ColorInputSection() {
           className={cn(
             "font-semibold",
             "py-2 px-3 w-full max-w-[400px]",
-            "border-2 border-border-light hover:border-border-light-hover dark:border-border-dark hover:dark:border-border-dark-hover",
+            "border-2 border-slate-400 hover:border-border-light-hover dark:border-border-dark hover:dark:border-border-dark-hover",
             "focus:outline-none focus:border-custom-500",
             "rounded-lg bg-slate-50 dark:bg-slate-800"
           )}
           placeholder="Enter a hex color"
         />
+        <div className="w-2" />
+        <ColorPicker />
       </div>
     </div>
   )

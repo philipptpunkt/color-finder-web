@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "NODE_OPTIONS='-r @newrelic/next' next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "NODE_OPTIONS='-r @newrelic/next' next start",
     "lint": "next lint",
@@ -14,10 +14,12 @@
     "chroma-js": "^2.6.1-0",
     "clsx": "^2.1.1",
     "dotenv": "^16.4.5",
+    "framer-motion": "^11.3.30",
     "newrelic": "^12.2.0",
     "next": "14.2.5",
     "next-themes": "^0.3.0",
     "react": "^18",
+    "react-color-palette": "^7.2.2",
     "react-dom": "^18",
     "sharp": "^0.33.5",
     "tailwind-merge": "^2.5.2"

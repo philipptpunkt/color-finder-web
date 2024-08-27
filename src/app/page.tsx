@@ -4,6 +4,8 @@ import { ExampleSection } from "@/components/ExampleSection/ExampleSection"
 import { ColorInputSection } from "@/components/InputSection/InputSection"
 import chroma from "chroma-js"
 import { generateColorValues } from "@/components/Colors/generateColorValues"
+import { Suspense } from "react"
+import { DEFAULT_COLOR } from "@/components/constants"
 
 interface Props {
   searchParams: { [key: string]: string | string[] | undefined }
@@ -14,7 +16,8 @@ export default function Home({ searchParams }: Props) {
 
   let cssVariables = ""
 
-  const hexValue = typeof hex === "string" && chroma.valid(hex) ? hex : "4765ff"
+  const hexValue =
+    typeof hex === "string" && chroma.valid(hex) ? hex : DEFAULT_COLOR
 
   const colorValues = generateColorValues(hexValue)
 
@@ -27,7 +30,9 @@ export default function Home({ searchParams }: Props) {
     <>
       <style>{`:root { ${cssVariables} }`}</style>
       <HeaderSection />
-      <ColorInputSection />
+      <Suspense fallback={null}>
+        <ColorInputSection />
+      </Suspense>
       <ColorsSection colors={colorValues} hexColor={hexValue} />
       <ExampleSection />
     </>

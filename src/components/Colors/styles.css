@@ -1,0 +1,15 @@
+.color-pad-wrapper {
+  display: inline-block;
+}
+
+.color-pad-wrapper .color-pad-icon {
+  display: none;
+}
+
+.color-pad-wrapper:hover .color-pad-text {
+  display: none;
+}
+
+.color-pad-wrapper:hover .color-pad-icon {
+  display: inline-block;
+}

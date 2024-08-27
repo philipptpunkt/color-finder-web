@@ -5,6 +5,7 @@ import { Inter } from "next/font/google"
 import { ThemeProvider } from "next-themes"
 import { Navigation } from "@/components/Navigation/Navigation"
 import { Footer } from "@/components/Footer/Footer"
+import { ToastProvider } from "@/design-system/Toast/ToastProvider"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -37,28 +38,36 @@ export const metadata: Metadata = {
   },
 }
 
-export default async function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+function NewRelicBrowser() {
   const browserTimingHeader = newrelic.getBrowserTimingHeader({
     hasToRemoveScriptWrapper: true,
   })
 
   return (
+    <Script
+      id="nr-browser-agent"
+      strategy="beforeInteractive"
+      dangerouslySetInnerHTML={{ __html: browserTimingHeader }}
+    />
+  )
+}
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider attribute="class">
-          {children}
-          <Navigation />
-          <Footer />
+          <ToastProvider>
+            {children}
+            <Navigation />
+            <Footer />
+          </ToastProvider>
         </ThemeProvider>
-        <Script
-          id="nr-browser-agent"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{ __html: browserTimingHeader }}
-        />
+        <NewRelicBrowser />
       </body>
     </html>
   )

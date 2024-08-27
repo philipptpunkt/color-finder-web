@@ -1,5 +1,7 @@
-import { cn } from "@/utils/cn"
 import { Color } from "./types"
+import { ColorPad } from "./ColorPad"
+import "./styles.css"
+import { DEFAULT_LIGHTNESS_THRESHOLD } from "../constants"
 
 interface ColorsSectionProps {
   colors: Array<Color>
@@ -23,7 +25,9 @@ export function ColorsSection({ colors, hexColor }: ColorsSectionProps) {
       {colors.map((color) => {
         const backgroundColor = color.color
         const textColor =
-          color.lightness > 0.7 ? colors[10].color : colors[0].color
+          color.lightness > DEFAULT_LIGHTNESS_THRESHOLD
+            ? colors[10].color
+            : colors[0].color
 
         const updatedHexColor = hexColor.startsWith("#")
           ? hexColor
@@ -31,35 +35,14 @@ export function ColorsSection({ colors, hexColor }: ColorsSectionProps) {
         const isUserPick = updatedHexColor === color.color
 
         return (
-          <div
-            className="flex flex-row sm:flex-col w-full justify-center items-center lg:rounded-lg py-4 lg:mx-2"
-            style={{
-              backgroundColor: backgroundColor,
-              color: textColor,
-            }}
+          <ColorPad
             key={color.color}
-          >
-            <div
-              className={cn(
-                "text-center text-sm sm:text-xs lg:text-sm pr-4 sm:p-0",
-                {
-                  "font-bold": isUserPick,
-                }
-              )}
-            >
-              {color.position}
-            </div>
-            <div
-              className={cn(
-                "text-center text-sm sm:text-xs lg:text-sm uppercase",
-                {
-                  "font-bold": isUserPick,
-                }
-              )}
-            >
-              {color.color}
-            </div>
-          </div>
+            hexValue={color.color}
+            backgroundColor={backgroundColor}
+            textColor={textColor}
+            position={color.position}
+            isUserPick={isUserPick}
+          />
         )
       })}
     </ColorContainer>

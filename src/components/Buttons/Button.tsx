@@ -12,6 +12,7 @@ interface ButtonProps {
   bold?: boolean
   horizontalPadding?: boolean
   verticalPadding?: boolean
+  onClick?: () => void
 }
 
 export function Button({
@@ -24,6 +25,7 @@ export function Button({
   bold = false,
   horizontalPadding = false,
   verticalPadding = false,
+  onClick,
 }: ButtonProps) {
   const isContainedStyle = type === "contained"
   const isOutlinedStyle = type === "outlined"
@@ -75,6 +77,7 @@ export function Button({
 
   return (
     <button
+      onClick={onClick}
       className={cn("rounded-md w-full p-2 font-normal", {
         "w-full": content === "stretch",
         "max-w-[160px]": content === "limited",

@@ -10,7 +10,7 @@ interface IconProps {
 
 export function Icon({
   iconName,
-  color = "text-textDefault",
+  color = "text-text-light dark:text-text-dark",
   className = "h-8 w-8",
 }: IconProps) {
   const icon = iconUrls[iconName]
@@ -24,7 +24,7 @@ export function Icon({
 
 export function IconHighlight({
   iconName,
-  color = "text-textDefault",
+  color = "text-text-light dark:text-text-dark",
   backgroundColor,
   border = false,
   className = "h-8 w-8",
@@ -48,7 +48,7 @@ export function IconHighlight({
 
 export function IconButton({
   iconName,
-  color = "text-textDefault",
+  color = "text-text-light dark:text-text-dark",
   className = "h-8 w-8",
   backgroundColor,
   onClick,
