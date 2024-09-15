@@ -1,4 +1,13 @@
 import { LayoutContainer } from "@/components/Layout/LayoutContainer"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Legal Notice and Privacy Policy | Color Finder",
+  description: `Read the legal notice and privacy policy of Color Finder to understand our terms of service, data handling practices, and compliance with global privacy regulations. We are committed to safeguarding your privacy while providing transparency about our policies.`,
+  alternates: {
+    canonical: "/legal-notice",
+  },
+}
 
 function Section({ children }: { children: React.ReactNode }) {
   return <div className="py-4">{children}</div>
@@ -22,7 +31,7 @@ function SectionWithHeadline({
 export default function LegalNotice() {
   return (
     <LayoutContainer>
-      <div className="mt-[64px] p-4">
+      <div className="header-space p-4">
         <h1 className="py-4">Impressum</h1>
 
         <p>

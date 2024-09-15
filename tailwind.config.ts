@@ -11,7 +11,18 @@ const config: Config = {
   darkMode: "selector",
   theme: {
     extend: {
+      rotate: {
+        "270": "270deg",
+      },
       colors: {
+        success: {
+          light: colors.green[400],
+          lighter: colors.green[200],
+          dark: colors.green[500],
+          darker: colors.green[700],
+        },
+        warning: { light: colors.amber[300], dark: colors.amber[400] },
+        error: { light: colors.red[400], dark: colors.red[600] },
         custom: {
           "50": "rgb(var(--custom-color-50))",
           "100": "rgb(var(--custom-color-100))",

@@ -3,8 +3,8 @@
 import { cn } from "@/utils/cn"
 import chroma from "chroma-js"
 import { usePathname, useRouter } from "next/navigation"
-import { useEffect, useState } from "react"
-import { ColorPicker } from "./ColorPicker"
+import { useCallback, useEffect, useState } from "react"
+import { ColorPicker } from "../ColorPicker/ColorPicker"
 import { useSearchParams } from "@/utils/useSearchParams"
 
 export function ColorInputSection() {
@@ -50,6 +50,15 @@ export function ColorInputSection() {
     }
   }, [createQueryString, pathname, router, input])
 
+  const applyColor = useCallback(
+    (value: string) => {
+      router.push(pathname + "?" + createQueryString("hex", value), {
+        scroll: false,
+      })
+    },
+    [createQueryString, pathname, router]
+  )
+
   return (
     <div className="flex justify-center w-full mb-8">
       <div className="flex justify-center w-full max-w-[1200px] p-4 rounded-md bg-slate-200 dark:bg-slate-900 mt-[3px]">
@@ -67,7 +76,10 @@ export function ColorInputSection() {
           placeholder="Enter a hex color"
         />
         <div className="w-2" />
-        <ColorPicker />
+        <ColorPicker
+          applyColor={applyColor}
+          initialColorValue={hexValueFromQuery}
+        />
       </div>
     </div>
   )

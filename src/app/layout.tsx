@@ -13,6 +13,10 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Color Finder - Create Color Palettes Easily",
   description: `Find and create color palettes that match Tailwind CSS color palettes with Color Finder. Our intuitive tool helps designers and developers generate, preview, and apply color variations in real-time. Enhance your projects with the ideal color scheme using Color Finder at colorfinder.app.`,
+  metadataBase: new URL("https://colorfinder.app"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Color Finder - Create Color Palettes Easily",
     description:

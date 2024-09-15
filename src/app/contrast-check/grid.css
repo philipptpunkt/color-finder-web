@@ -1,0 +1,30 @@
+.contrast-check-grid {
+  display: grid;
+  gap: 3px;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "headerTitle headerTitle"
+    "headerText headerText"
+    "foregroundColor backgroundColor"
+    "checkResults checkResults";
+}
+
+@media (min-width: 768px) {
+  .contrast-check-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "headerTitle headerText"
+      "foregroundColor backgroundColor"
+      "checkResults checkResults";
+  }
+}
+
+@media (min-width: 900px) {
+  .contrast-check-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "headerTitle headerTitle headerText headerText"
+      "foregroundColor backgroundColor checkResults checkResults";
+  }
+}

@@ -37,6 +37,10 @@
     @apply text-xs text-text-light-light dark:text-text-light-dark;
   }
 
+  .header-space {
+    margin-top: 102px;
+  }
+
   .rainbow-circle {
     background: conic-gradient(
       rgba(255, 0, 0, 1) 0%,

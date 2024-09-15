@@ -1,38 +1,29 @@
 import Link from "next/link"
 import { LayoutContainer } from "../Layout/LayoutContainer"
-import { cn } from "@/utils/cn"
-
-function Container({
-  children,
-  className,
-}: {
-  children?: React.ReactNode
-  className?: string
-}) {
-  return (
-    <div
-      className={cn(
-        "text-center rounded-md bg-slate-200 dark:bg-slate-900 py-4 sm:py-8 px-16 mb-[3px] sm:mb-0 sm:mr-[3px]",
-        className
-      )}
-    >
-      {children}
-    </div>
-  )
-}
+import { ContentContainer } from "../Layout/ContentContainer"
 
 export function Footer() {
   return (
     <LayoutContainer>
       <div className="flex flex-col sm:flex-row w-full font-semibold">
-        <Container className="hidden sm:block w-full" />
-        <Container>
-          <Link href="/">Home</Link>
-        </Container>
-        <Container>
-          <Link href="/legal-notice">Legal&nbsp;Notice</Link>
-        </Container>
-        <Container className="hidden sm:block w-full" />
+        <ContentContainer className="w-full sm:w-1/2 mb-[3px] sm:mb-0 sm:mr-[3px]">
+          <ul>
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/contrast-check">Contrast&nbsp;Check</Link>
+            </li>
+          </ul>
+        </ContentContainer>
+        <ContentContainer className="w-full sm:w-1/2">
+          <ul>
+            <li>
+              <Link href="/legal-notice">Legal&nbsp;Notice</Link>
+            </li>
+          </ul>
+          <p>&copy; 2024 Philipp Trentmann | Color Finder</p>
+        </ContentContainer>
       </div>
     </LayoutContainer>
   )

@@ -30,7 +30,13 @@ function generateLightnessValues(originalLightness: number) {
   return lightnessValues.reverse()
 }
 
-export function generateColorValues(hex: string) {
+export type ColorValues = Array<{
+  color: string
+  position: number
+  lightness: number
+}>
+
+export function generateColorValues(hex: string): ColorValues {
   if (chroma.valid(hex)) {
     const originalLightness = chroma(hex).get("hsl.l")
     const hue = chroma(hex).get("hsl.h")

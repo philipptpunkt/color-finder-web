@@ -1,7 +1,6 @@
 "use client"
 
 import { Alpha, Hue, Saturation, useColor } from "react-color-palette"
-import { Modal } from "@/design-system/Modal/Modal"
 import { Button } from "../Buttons/Button"
 import { cn } from "@/utils/cn"
 import { DEFAULT_COLOR, DEFAULT_LIGHTNESS_THRESHOLD } from "../constants"
@@ -11,6 +10,7 @@ interface ColorPickerModalProps {
   close: () => void
   applyColor: (value: string) => void
   initialColorValue: string | null
+  enableAlphaValue?: boolean
   className?: string
 }
 
@@ -18,6 +18,7 @@ export default function ColorPickerModal({
   close,
   applyColor,
   initialColorValue,
+  enableAlphaValue,
   className,
 }: ColorPickerModalProps) {
   const [color, setColor] = useColor(initialColorValue || DEFAULT_COLOR)
@@ -42,9 +43,11 @@ export default function ColorPickerModal({
       <div className="mb-4">
         <Hue color={color} onChange={setColor} />
       </div>
-      <div className="mb-4">
-        <Alpha color={color} onChange={setColor} />
-      </div>
+      {enableAlphaValue ? (
+        <div className="mb-4">
+          <Alpha color={color} onChange={setColor} />
+        </div>
+      ) : null}
       <div className="rounded-lg p-2" style={{ backgroundColor: color.hex }}>
         <p
           className={cn(

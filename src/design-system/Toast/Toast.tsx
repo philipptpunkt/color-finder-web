@@ -50,9 +50,9 @@ export function Toast({ type, close, title, message }: ToastProps) {
           "flex justify-center items-center grow rounded-l-lg p-2",
           {
             "bg-custom-200 dark:bg-custom-800": type === "info",
-            "bg-green-400": type === "success",
-            "bg-amber-300": type === "warning",
-            "bg-red-400": type === "error",
+            "bg-success-light dark:bg-success-dark": type === "success",
+            "bg-warning-light dark:bg-warning-dark": type === "warning",
+            "bg-error-light dark:bg-error-dark": type === "error",
           }
         )}
       >
