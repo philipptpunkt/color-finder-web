@@ -84,7 +84,10 @@ export function CustomColorMatrix({
               </th>
               {extendedColorValues.map((colorValue) => {
                 return (
-                  <th className="h-12 sm:h-16 font-light text-sm md:font-semibold text-center border border-slate-300 dark:border-slate-600">
+                  <th
+                    key={colorValue.color}
+                    className="h-12 sm:h-16 font-light text-sm md:font-semibold text-center border border-slate-300 dark:border-slate-600"
+                  >
                     {colorValue.position === 0
                       ? "White"
                       : colorValue.position === 1000
@@ -101,6 +104,7 @@ export function CustomColorMatrix({
               {extendedColorValues.map((colorValue) => {
                 return (
                   <td
+                    key={colorValue.color}
                     className="h-12 sm:h-16 border border-slate-300 dark:border-slate-600"
                     style={{ backgroundColor: colorValue.color }}
                   />
@@ -109,7 +113,7 @@ export function CustomColorMatrix({
             </tr>
             {colorValues.map(({ color: rowColor }) => {
               return (
-                <tr>
+                <tr key={rowColor}>
                   <th
                     className="border border-slate-300 dark:border-slate-600"
                     style={{ backgroundColor: rowColor }}
@@ -119,6 +123,7 @@ export function CustomColorMatrix({
                     const contrast = Math.round(contrastRaw * 100) / 100
                     return (
                       <td
+                        key={columnColor}
                         className={cn(
                           "h-auto sm:h-16 p-1",
                           "font-light text-sm md:font-semibold text-center",

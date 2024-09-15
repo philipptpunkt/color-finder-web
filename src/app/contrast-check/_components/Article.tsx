@@ -37,11 +37,11 @@ export function Article() {
         <p className="my-4">
           By meeting these standards, your site will be more readable,
           user-friendly, and accessible to everyone, including users with color
-          blindness or low vision. Whether you're testing color combinations for
-          text, background, or UI elements, our contrast checker provides
-          instant feedback on whether your design passes WCAG compliance. This
-          ensures that your website follows best practices for web accessibility
-          and improves overall user experience.
+          blindness or low vision. Whether you&apos;re testing color
+          combinations for text, background, or UI elements, our contrast
+          checker provides instant feedback on whether your design passes WCAG
+          compliance. This ensures that your website follows best practices for
+          web accessibility and improves overall user experience.
         </p>
         <p>
           Accessible color contrast also positively impacts your SEO, as search
