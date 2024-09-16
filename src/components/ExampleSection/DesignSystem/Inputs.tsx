@@ -7,10 +7,22 @@ export function Inputs() {
       <div className="p-4">
         <p className="font-semibold pb-4">Input</p>
         <div className="flex flex-col gap-2 mt-2">
-          <Input value="" placeholder="Input default" rounded />
-          <Input value="" placeholder="Input hover" hover rounded />
-          <Input value="" placeholder="Input active" active rounded />
-          <Input value="" placeholder="Input disabled" disabled rounded />
+          <Input key="default" value="" placeholder="Input default" rounded />
+          <Input key="hover" value="" placeholder="Input hover" hover rounded />
+          <Input
+            key="active"
+            value=""
+            placeholder="Input active"
+            active
+            rounded
+          />
+          <Input
+            key="disabled"
+            value=""
+            placeholder="Input disabled"
+            disabled
+            rounded
+          />
         </div>
       </div>
     </Card>
