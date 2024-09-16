@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { LayoutContainer } from "../Layout/LayoutContainer"
 import { ContentContainer } from "../Layout/ContentContainer"
+import { Socials } from "./Socials"
 
 export function Footer() {
   return (
@@ -22,6 +23,7 @@ export function Footer() {
               <Link href="/legal-notice">Legal&nbsp;Notice</Link>
             </li>
           </ul>
+          <Socials className="my-8" />
           <p>&copy; 2024 Philipp Trentmann | Color Finder</p>
         </ContentContainer>
       </div>

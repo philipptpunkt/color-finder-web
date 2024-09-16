@@ -7,7 +7,10 @@ import icCheckCircle from "./svgs/ic-check-circle.svg"
 import icCurrencyDollarSimple from "./svgs/ic-currency-dollar-simple.svg"
 import icEyedropper from "./svgs/ic-eyedropper.svg"
 import icFaders from "./svgs/ic-faders.svg"
+import icGithub from "./svgs/ic-github-logo.svg"
 import icInfo from "./svgs/ic-info.svg"
+import icInstagram from "./svgs/ic-instagram-logo.svg"
+import icLinkedin from "./svgs/ic-linkedin-logo.svg"
 import icMoon from "./svgs/ic-moon.svg"
 import icPaintBucket from "./svgs/ic-paint-bucket.svg"
 import icPalette from "./svgs/ic-palette.svg"
@@ -33,7 +36,10 @@ export const iconUrls = {
   icCurrencyDollarSimple,
   icEyedropper,
   icFaders,
+  icGithub,
   icInfo,
+  icInstagram,
+  icLinkedin,
   icMoon,
   icPaintBucket,
   icPalette,
