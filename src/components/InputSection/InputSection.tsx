@@ -1,11 +1,11 @@
 "use client"
 
-import { cn } from "@/utils/cn"
 import chroma from "chroma-js"
 import { usePathname, useRouter } from "next/navigation"
 import { useCallback, useEffect, useState } from "react"
 import { ColorPicker } from "../ColorPicker/ColorPicker"
 import { useSearchParams } from "@/utils/useSearchParams"
+import { Input } from "@/design-system/Input/Input"
 
 export function ColorInputSection() {
   const router = useRouter()
@@ -62,18 +62,11 @@ export function ColorInputSection() {
   return (
     <div className="flex justify-center w-full mb-8">
       <div className="flex justify-center w-full max-w-[1200px] p-4 rounded-md bg-slate-200 dark:bg-slate-900 mt-[3px]">
-        <input
-          type="text"
+        <Input
           value={input}
           onChange={handleInputChange}
-          className={cn(
-            "font-semibold",
-            "py-2 px-3 w-full max-w-[400px]",
-            "border-2 border-slate-400 hover:border-border-light-hover dark:border-border-dark hover:dark:border-border-dark-hover",
-            "focus:outline-none focus:border-custom-500",
-            "rounded-lg bg-slate-50 dark:bg-slate-800"
-          )}
           placeholder="Enter a hex color"
+          rounded
         />
         <div className="w-2" />
         <ColorPicker

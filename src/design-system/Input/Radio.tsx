@@ -22,7 +22,7 @@ export function Radio({ label, checked, name, value, onChange }: RadioProps) {
       <span
         className={cn(
           "w-5 h-5 mr-2 rounded-full",
-          "border border-slate-500",
+          "border border-slate-500 hover:border-2",
           "flex items-center justify-center"
         )}
       >

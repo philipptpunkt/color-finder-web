@@ -6,19 +6,25 @@
   grid-template-areas:
     "buttonsContained"
     "buttonsOutlined"
-    "buttonsText";
+    "buttonsText"
+    "toastMessage"
+    "inputs";
 }
 
 @media (min-width: 768px) {
   .grid-design-system {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: "buttonsContained buttonsOutlined buttonsText";
+    grid-template-areas:
+      "buttonsContained buttonsOutlined buttonsText"
+      "toastMessage inputs placeholder";
   }
 }
 
 @media (min-width: 1024px) {
   .grid-design-system {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: "buttonsContained buttonsOutlined buttonsText";
+    grid-template-areas:
+      "buttonsContained buttonsOutlined buttonsText"
+      "toastMessage inputs placeholder";
   }
 }

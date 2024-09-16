@@ -61,7 +61,7 @@ const config: Config = {
           light: colors.slate[200],
           dark: colors.slate[700],
           "light-hover": colors.slate[300],
-          "dark-hover": colors.slate[600],
+          "dark-hover": colors.slate[400],
         },
         shadow: {
           light: colors.slate[200],

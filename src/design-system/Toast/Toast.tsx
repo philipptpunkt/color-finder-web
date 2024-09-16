@@ -5,7 +5,7 @@ export type ToastMessageType = "info" | "success" | "warning" | "error"
 
 interface ToastProps {
   type: ToastMessageType
-  close: () => void
+  close?: () => void
   title: string
   message?: string
 }
