@@ -4,19 +4,22 @@ import { iconUrls } from "./IconUrls"
 
 interface IconProps {
   iconName: IconName
-  color?: string
   className?: string
+  style?: React.CSSProperties
 }
 
-export function Icon({
-  iconName,
-  color = "text-text-light dark:text-text-dark",
-  className = "h-8 w-8",
-}: IconProps) {
+export function Icon({ iconName, className, style }: IconProps) {
   const icon = iconUrls[iconName]
 
   return (
-    <svg className={cn(`${color}`, className)}>
+    <svg
+      className={cn(
+        "text-text-light dark:text-text-dark",
+        "h-8 w-8",
+        className
+      )}
+      style={style}
+    >
       <use href={`${icon.src}#icon`} />
     </svg>
   )
@@ -24,10 +27,9 @@ export function Icon({
 
 export function IconHighlight({
   iconName,
-  color = "text-text-light dark:text-text-dark",
   backgroundColor,
   border = false,
-  className = "h-8 w-8",
+  className,
 }: IconProps & { backgroundColor?: string; border?: boolean }) {
   const icon = iconUrls[iconName]
 
@@ -39,7 +41,13 @@ export function IconHighlight({
         { "border border-border-light dark:border-border-dark": border }
       )}
     >
-      <svg className={cn(`${color}`, className)}>
+      <svg
+        className={cn(
+          "text-text-light dark:text-text-dark",
+          "h-8 w-8",
+          className
+        )}
+      >
         <use href={`${icon.src}#icon`} />
       </svg>
     </div>
@@ -48,11 +56,13 @@ export function IconHighlight({
 
 export function IconButton({
   iconName,
-  color = "text-text-light dark:text-text-dark",
-  className = "h-8 w-8",
+  className,
   backgroundColor,
   onClick,
-}: IconProps & { backgroundColor?: string; onClick: () => void }) {
+}: IconProps & {
+  backgroundColor?: string
+  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void
+}) {
   const icon = iconUrls[iconName]
 
   return (
@@ -63,7 +73,13 @@ export function IconButton({
       )}
       onClick={onClick}
     >
-      <svg className={cn(color, className)}>
+      <svg
+        className={cn(
+          "text-text-light dark:text-text-dark",
+          "h-8 w-8",
+          className
+        )}
+      >
         <use href={`${icon.src}#icon`} />
       </svg>
     </button>

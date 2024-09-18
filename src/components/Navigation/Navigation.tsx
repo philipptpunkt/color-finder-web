@@ -5,8 +5,7 @@ import { cn } from "@/utils/cn"
 import { Suspense } from "react"
 import { HomeLinkClient } from "./HomeLinkClient"
 import { ContastCheckClient } from "./ContastCheckClient"
-
-const ENABLE_CSS_TOOLS = false
+import { CssToolsClient } from "./CssToolsClient"
 
 export function Navigation() {
   return (
@@ -40,7 +39,9 @@ export function Navigation() {
           >
             <ContastCheckClient />
           </Suspense>
-          {ENABLE_CSS_TOOLS ? <Link href="/css-tools">CSS Tools</Link> : null}
+          <Suspense fallback={<Link href="/css-tools">CSS Tools</Link>}>
+            <CssToolsClient />
+          </Suspense>
         </div>
       </div>
     </div>

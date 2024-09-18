@@ -1,9 +1,7 @@
 import { cn } from "@/utils/cn"
+import { InputHTMLAttributes } from "react"
 
-interface InputProps {
-  value?: string
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
-  placeholder?: string
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   rounded?: boolean
   disabled?: boolean
   active?: boolean
@@ -11,17 +9,19 @@ interface InputProps {
 }
 
 export function Input({
+  type,
   value,
   onChange,
-  rounded = false,
   placeholder,
+  rounded = false,
   disabled,
   active,
   hover,
+  className,
 }: InputProps) {
   return (
     <input
-      type="text"
+      type={type}
       value={value}
       onChange={onChange}
       className={cn(
@@ -37,7 +37,8 @@ export function Input({
             active,
           "border-slate-300 hover:border-slate-300 dark:border-slate-700 hover:dark:border-slate-700 placeholder-slate-300 bg-slate-100 dark:bg-slate-900 dark:placeholder-slate-600":
             disabled,
-        }
+        },
+        className
       )}
       placeholder={placeholder}
       disabled={disabled}

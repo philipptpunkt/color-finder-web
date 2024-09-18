@@ -38,7 +38,7 @@ export function ColorPicker({
         title={
           <Icon
             iconName={IconName.icPaintBucket}
-            color="text-text-inverse-light"
+            className="text-text-inverse-light"
           />
         }
       />

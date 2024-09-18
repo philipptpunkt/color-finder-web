@@ -2,16 +2,9 @@
 
 import { cn } from "@/utils/cn"
 import { Icon, IconName } from "../Icon"
-import "./styles.css"
 import { useToast } from "@/design-system/Toast/ToastProvider"
-
-function copyTextToClipboard(text: string) {
-  if ("clipboard" in navigator) {
-    return navigator.clipboard.writeText(text)
-  } else {
-    return document.execCommand("copy", true, text)
-  }
-}
+import { copyTextToClipboard } from "@/utils/copyTextToClipboard"
+import "./styles.css"
 
 export function ColorPad({
   hexValue,
@@ -66,11 +59,14 @@ export function ColorPad({
       >
         {hexValue}
       </div>
-      <div className="flex justify-center items-center">
+      <div
+        className="flex justify-center items-center"
+        style={{ color: textColor }}
+      >
         <Icon
           className="color-pad-icon w-8 h-8"
           iconName={IconName.icEyedropper}
-          color={textColor}
+          style={{ color: textColor }}
         />
       </div>
     </div>

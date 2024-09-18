@@ -33,6 +33,12 @@
 }
 
 @layer utilities {
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
   .text-label {
     @apply text-xs text-text-light-light dark:text-text-light-dark;
   }

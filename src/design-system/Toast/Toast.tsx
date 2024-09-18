@@ -14,24 +14,29 @@ function ToastIcon({ type }: { type: ToastMessageType }) {
   switch (type) {
     case "error":
       return (
-        <Icon iconName={IconName.icXCircle} color="text-text-inverse-light" />
+        <Icon
+          iconName={IconName.icXCircle}
+          className="text-text-inverse-light"
+        />
       )
     case "warning":
       return (
         <Icon
           iconName={IconName.icWarningCircle}
-          color="text-text-inverse-light"
+          className="text-text-inverse-light"
         />
       )
     case "success":
       return (
         <Icon
           iconName={IconName.icCheckCircle}
-          color="text-text-inverse-light"
+          className="text-text-inverse-light"
         />
       )
     default:
-      return <Icon iconName={IconName.icInfo} color="text-text-inverse-light" />
+      return (
+        <Icon iconName={IconName.icInfo} className="text-text-inverse-light" />
+      )
   }
 }
 

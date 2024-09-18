@@ -1,0 +1,38 @@
+.draggable-triangle {
+  position: absolute;
+  bottom: 0;
+  width: 100px; /* Triangle base width */
+  height: 40px; /* Triangle height */
+  cursor: grab;
+  user-select: none;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Upward-pointing triangle */
+  transition: background-color 0.2s;
+}
+
+.draggable-triangle:active {
+  cursor: grabbing;
+}
+
+.labels-container {
+  position: relative;
+  width: 100%;
+  height: 20px; /* Height to accommodate labels */
+}
+
+.label {
+  white-space: nowrap;
+  pointer-events: none; /* Allows clicks to pass through to triangles */
+}
+
+/* Screen Reader Only Text */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

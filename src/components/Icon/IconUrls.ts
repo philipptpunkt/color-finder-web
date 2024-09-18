@@ -4,9 +4,12 @@ import icArrowBendUpLeft from "./svgs/ic-arrow-bend-up-left.svg"
 import icArrowClockwise from "./svgs/ic-arrows-clockwise.svg"
 import icChartLine from "./svgs/ic-chart-line.svg"
 import icCheckCircle from "./svgs/ic-check-circle.svg"
+import icCopy from "./svgs/ic-copy.svg"
 import icCurrencyDollarSimple from "./svgs/ic-currency-dollar-simple.svg"
 import icEyedropper from "./svgs/ic-eyedropper.svg"
 import icFaders from "./svgs/ic-faders.svg"
+import icFileCss from "./svgs/ic-file-css.svg"
+import icFileJsx from "./svgs/ic-file-jsx.svg"
 import icGithub from "./svgs/ic-github-logo.svg"
 import icInfo from "./svgs/ic-info.svg"
 import icInstagram from "./svgs/ic-instagram-logo.svg"
@@ -33,9 +36,12 @@ export const iconUrls = {
   icArrowClockwise,
   icChartLine,
   icCheckCircle,
+  icCopy,
   icCurrencyDollarSimple,
   icEyedropper,
   icFaders,
+  icFileCss,
+  icFileJsx,
   icGithub,
   icInfo,
   icInstagram,

@@ -63,9 +63,9 @@ export default function ContrastCheckPage({ searchParams }: Props) {
                     , ensuring compliance for normal text, large text, and user
                     interfaces. Enter your colors and instantly see if they pass{" "}
                     <strong>
-                      accessibility guidelines for better, more inclusive design
+                      accessibility guidelines for better, more inclusive
+                      design.
                     </strong>
-                    .
                   </p>
                 </div>
               </ContentContainer>

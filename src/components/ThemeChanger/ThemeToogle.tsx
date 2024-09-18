@@ -23,7 +23,7 @@ export function ThemeToggle() {
       iconName={isDarkMode ? IconName.icSun : IconName.icMoon}
       onClick={() => setTheme(isDarkMode ? "light" : "dark")}
       backgroundColor="bg-slate-900 dark:bg-slate-800 hover:bg-slate-700 hover:dark:bg-slate-700"
-      color="text-text-inverse-light"
+      className="text-text-inverse-light"
     />
   )
 }

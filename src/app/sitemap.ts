@@ -15,6 +15,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: "https://colorfinder.app/css-tools",
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 1,
+    },
+    {
       url: "https://colorfinder.app/legal-notice",
       lastModified: new Date(),
       changeFrequency: "monthly",

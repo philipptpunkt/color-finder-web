@@ -7,6 +7,9 @@ interface InputProps {
   rounded?: boolean
 }
 
+//
+// WARNING for EXAMPLE COMPONENTS ONLY
+//
 export function Input({
   value,
   onChange,
@@ -27,6 +30,7 @@ export function Input({
         }
       )}
       placeholder={placeholder}
+      readOnly
     />
   )
 }

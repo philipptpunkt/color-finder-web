@@ -1,0 +1,64 @@
+.css-tools-grid {
+  display: grid;
+  gap: 3px;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-areas:
+    "headerTitle"
+    "headerText"
+    "colorStops"
+    "colorPicker"
+    "degreeSelection"
+    "colorValues"
+    "selectionContainer"
+    "codeSection";
+}
+
+@media (min-width: 600px) {
+  .css-tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "headerTitle headerTitle"
+      "headerText headerText"
+      "colorStops colorStops"
+      "colorPicker degreeSelection"
+      "colorValues selectionContainer"
+      "codeSection codeSection";
+  }
+}
+
+@media (min-width: 768px) {
+  .css-tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "headerTitle headerText"
+      "colorStops colorStops"
+      "colorPicker degreeSelection"
+      "colorValues selectionContainer"
+      "codeSection codeSection";
+  }
+}
+
+@media (min-width: 920px) {
+  .css-tools-grid {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+      "headerTitle headerTitle headerTitle headerTitle headerTitle headerTitle headerText headerText headerText headerText headerText headerText"
+      "colorStops colorStops colorStops colorStops colorStops colorStops colorStops colorStops colorStops colorStops colorStops colorStops"
+      "colorPicker colorPicker colorPicker colorPicker degreeSelection degreeSelection degreeSelection degreeSelection selectionContainer selectionContainer selectionContainer selectionContainer"
+      "colorValues colorValues colorValues colorValues placeholder placeholder placeholder placeholder selectionContainer selectionContainer selectionContainer selectionContainer"
+      "codeSection codeSection codeSection codeSection codeSection codeSection codeSection codeSection codeSection codeSection codeSection codeSection";
+  }
+}
+
+@media (min-width: 1080px) {
+  .css-tools-grid {
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas:
+      "headerTitle headerTitle headerTitle headerTitle headerText headerText headerText headerText"
+      "colorStops colorStops colorStops colorStops colorStops colorStops colorStops colorStops"
+      "colorPicker colorPicker colorPicker degreeSelection degreeSelection degreeSelection selectionContainer selectionContainer"
+      "colorValues colorValues colorValues placeholder placeholder placeholder selectionContainer selectionContainer"
+      "codeSection codeSection codeSection codeSection codeSection codeSection codeSection codeSection";
+  }
+}

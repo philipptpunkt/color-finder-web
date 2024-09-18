@@ -15,6 +15,9 @@ export function Footer() {
             <li>
               <Link href="/contrast-check">Contrast&nbsp;Check</Link>
             </li>
+            <li>
+              <Link href="/css-tools">CSS&nbsp;Tools</Link>
+            </li>
           </ul>
         </ContentContainer>
         <ContentContainer className="w-full sm:w-1/2">
@@ -24,7 +27,7 @@ export function Footer() {
             </li>
           </ul>
           <Socials className="my-8" />
-          <p>&copy; 2024 Philipp Trentmann | Color Finder</p>
+          <p>&copy; 2024 Philipp&nbsp;Trentmann | Color&nbsp;Finder</p>
         </ContentContainer>
       </div>
     </LayoutContainer>
