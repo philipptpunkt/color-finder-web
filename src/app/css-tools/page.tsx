@@ -24,8 +24,8 @@ function LinkCard({
   children: React.ReactNode
 }) {
   return (
-    <Link href={href} className="block max-w-[400px]">
-      <Card horizontalPadding verticalPadding rounded="rounded-2xl">
+    <Link href={href} className="block max-w-[400px] w-full">
+      <Card fill horizontalPadding verticalPadding rounded="rounded-2xl">
         <h3 className="mb-4">{headline}</h3>
         {children}
       </Card>
@@ -37,7 +37,7 @@ interface Props {
   searchParams: { [key: string]: string | string[] | undefined }
 }
 
-export default function Home({ searchParams }: Props) {
+export default function CssToolsPage({ searchParams }: Props) {
   const hex = searchParams.hex
 
   let cssVariables = ""
@@ -61,7 +61,7 @@ export default function Home({ searchParams }: Props) {
 
           <h2 className="py-4">Overview</h2>
 
-          <div className="pt-4 pb-16">
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-8 pt-4 pb-16">
             <LinkCard
               href="/css-tools/gradient-creator"
               headline="Gradient Creator"
@@ -71,6 +71,24 @@ export default function Home({ searchParams }: Props) {
                 The <strong>Gradient Creator</strong> is an interactive tool to
                 generate gradients in various forms and colors. It automatically
                 returns the required CSS code.
+              </p>
+            </LinkCard>
+            <LinkCard
+              href="/css-tools/box-shadow-creator"
+              headline="Box Shadow Creator"
+            >
+              <div className="flex justify-center items-center h-32 rounded-xl mb-4 bg-slate-100">
+                <div
+                  className="h-16 w-32 bg-slate-700"
+                  style={{
+                    boxShadow: "12px 12px 10px 3px rgba(120, 120, 120, 1)",
+                  }}
+                />
+              </div>
+              <p>
+                The <strong>Box Shadow Creator</strong> lets you adjust offsets,
+                blur, shadow size and color in real-time. You can copy the CSS
+                code directly into your styles
               </p>
             </LinkCard>
           </div>

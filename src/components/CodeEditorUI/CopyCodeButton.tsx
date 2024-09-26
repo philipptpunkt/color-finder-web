@@ -4,10 +4,16 @@ import { Icon, IconName } from "@/components/Icon"
 import { useToast } from "@/design-system/Toast/ToastProvider"
 import { copyTextToClipboard } from "@/utils/copyTextToClipboard"
 
-export function CopyCodeButton({ code }: { code: string }) {
+export function CopyCodeButton({
+  code,
+  propertyName,
+}: {
+  code: string
+  propertyName: string
+}) {
   const { showToast } = useToast()
 
-  const codeStringForClipboard = `background: ${code}`
+  const codeStringForClipboard = `${propertyName}: ${code}`
 
   const handleClick = () => {
     copyTextToClipboard(codeStringForClipboard)

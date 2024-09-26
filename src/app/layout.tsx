@@ -3,10 +3,10 @@ import newrelic from "newrelic"
 import Script from "next/script"
 import { Inter } from "next/font/google"
 import { ThemeProvider } from "next-themes"
-import { Navigation } from "@/components/Navigation/Navigation"
 import { Footer } from "@/components/Footer/Footer"
 import { ToastProvider } from "@/design-system/Toast/ToastProvider"
 import "./globals.css"
+import { Navigation } from "@/components/Navigation/Navigation"
 
 const inter = Inter({ subsets: ["latin"] })
 

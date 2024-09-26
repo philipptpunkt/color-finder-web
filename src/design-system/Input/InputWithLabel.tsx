@@ -1,4 +1,4 @@
-import { Input, InputProps } from "@/design-system/Input/Input"
+import { Input, InputProps } from "./Input"
 
 interface InputWithLabelProps extends InputProps {
   label: string

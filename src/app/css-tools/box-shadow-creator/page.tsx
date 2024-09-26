@@ -1,18 +1,18 @@
 import { ContentContainer } from "@/components/Layout/ContentContainer"
 import { LayoutContainer } from "@/components/Layout/LayoutContainer"
-import { GradientSection } from "./_components/GradientSection"
 import chroma from "chroma-js"
 import { DEFAULT_COLOR } from "@/components/constants"
 import { generateColorValues } from "@/components/Colors/generateColorValues"
 import { Suspense } from "react"
 import { Metadata } from "next"
+import { ShadowSection } from "./_components/ShadowSection"
 import "./grid.css"
 
 export const metadata: Metadata = {
-  title: "Gradient Creator | Create Custom CSS & Tailwind Gradients",
-  description: `Design and customize stunning gradients with our Gradient Generator. Easily adjust colors, set angles, and add midpoints to create dynamic CSS and Tailwind gradients for your web projects. Get instant code and Tailwind class generation to enhance your designs seamlessly.`,
+  title: "Box Shadow Creator | Create Custom CSS & Tailwind Box Shadows",
+  description: `Design custom box-shadow effects quickly with our Box-Shadow Creator. Adjust offsets, blur, spread, and color to generate CSS and Tailwind box-shadow styles in real-time. Perfect for enhancing UI components with depth and visual appeal.`,
   alternates: {
-    canonical: "/css-tools/gradient-creator",
+    canonical: "/css-tools/box-shadow-creator",
   },
 }
 
@@ -20,7 +20,7 @@ interface Props {
   searchParams: { [key: string]: string | string[] | undefined }
 }
 
-export default function GradientCreatorPage({ searchParams }: Props) {
+export default function BoxShadowCreatorPage({ searchParams }: Props) {
   const hex = searchParams.hex
 
   let cssVariables = ""
@@ -40,12 +40,11 @@ export default function GradientCreatorPage({ searchParams }: Props) {
       <style>{`:root { ${cssVariables} }`}</style>
       <div className="header-space">
         <LayoutContainer>
-          <div className="css-tools-grid">
+          <div className="box-shadow-grid">
             <div style={{ gridArea: "headerTitle" }}>
               <ContentContainer className="w-full h-full">
                 <h1 className="max-w-[300px]">
-                  <span className="font-black">Create</span> gradients{" "}
-                  <span className="font-black">Easily</span>
+                  Need a <span className="font-black">Box Shadow?</span>
                 </h1>
               </ContentContainer>
             </div>
@@ -54,20 +53,21 @@ export default function GradientCreatorPage({ searchParams }: Props) {
               <ContentContainer className="flex w-full h-full">
                 <div className="self-end">
                   <p className="font-semibold">
-                    Use our <strong>Gradient Generator</strong> to create
-                    beautiful custom gradients for your projects.{" "}
-                    <strong>Adjust colors, angles, and add midpoints</strong> to
-                    see <strong>real-time previews</strong> and instantly
-                    generate the CSS code you need. Perfect for developers and
-                    designers who want{" "}
-                    <strong>fast, flexible gradient creation</strong>.
+                    <strong>Create custom box-shadow effects</strong>{" "}
+                    effortlessly with our Box-Shadow Creator. Adjust{" "}
+                    <strong>
+                      offsets, blur, spread, and shadow color in real-time
+                    </strong>
+                    , and <strong>automatically generate the CSS</strong> for
+                    your web elements. Ideal for developers and designers
+                    looking to add depth and polish to their UI components.
                   </p>
                 </div>
               </ContentContainer>
             </div>
 
             <Suspense fallback={null}>
-              <GradientSection />
+              <ShadowSection />
             </Suspense>
           </div>
           <div className="h-40"></div>

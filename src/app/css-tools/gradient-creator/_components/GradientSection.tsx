@@ -10,7 +10,7 @@ import { useDegreeWheel } from "./DegreeSelection/useDegreeWheel"
 import { ColorPicker } from "./ColorSelection/ColorPicker"
 import { ColorValues } from "./ColorSelection/ColorValues"
 import { useColorStop } from "./ColorSelection/useColorStop"
-import { CodeSection } from "./CodeSection"
+import { CodeSection } from "@/components/CodeEditorUI/CodeSection"
 
 export type GradientType = "linear" | "radial" | "conic"
 
@@ -151,7 +151,7 @@ export function GradientSection() {
       </div>
 
       <div style={{ gridArea: "codeSection" }}>
-        <CodeSection code={gradientCSS} />
+        <CodeSection code={gradientCSS} propertyName="background" />
       </div>
     </>
   )

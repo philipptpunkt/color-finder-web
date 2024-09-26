@@ -122,7 +122,7 @@ export function Wheel({
       window.removeEventListener("touchmove", handleTouchMove)
       window.removeEventListener("touchend", handleTouchEnd)
     }
-  }, [degree, onDegreeChange])
+  }, [degree, onDegreeChange, disabled])
 
   if (!mounted) {
     return (

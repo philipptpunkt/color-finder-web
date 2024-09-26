@@ -1,0 +1,32 @@
+.box-shadow-grid {
+  display: grid;
+  gap: 3px;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-areas:
+    "headerTitle"
+    "headerText"
+    "shadowDisplay"
+    "shadowSettings"
+    "codeSection";
+}
+
+@media (min-width: 768px) {
+  .box-shadow-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "headerTitle headerText"
+      "shadowSettings shadowDisplay"
+      "codeSection codeSection";
+  }
+}
+
+@media (min-width: 1024px) {
+  .box-shadow-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "headerTitle headerText"
+      "shadowSettings shadowDisplay"
+      "codeSection codeSection";
+  }
+}

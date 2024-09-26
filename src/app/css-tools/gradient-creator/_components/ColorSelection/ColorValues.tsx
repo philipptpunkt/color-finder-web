@@ -1,5 +1,5 @@
+import { InputWithLabel } from "@/design-system/Input/InputWithLabel"
 import chroma from "chroma-js"
-import { InputWithLabel } from "./InputWithLabel"
 
 interface ColorValuesProps {
   hex: string

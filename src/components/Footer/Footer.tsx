@@ -27,6 +27,11 @@ const contentPageLinks = [
     label: "Gradient\u00A0Creator",
     subpage: true,
   },
+  {
+    href: "/css-tools/box-shadow-creator",
+    label: "Box\u00A0Shadow\u00A0Creator",
+    subpage: true,
+  },
 ]
 
 const otherPageLinks = [
