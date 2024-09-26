@@ -18,9 +18,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Color Finder - Create Color Palettes Easily",
+    title: "Color Finder - Create Color Palettes and Styles Easily",
     description:
-      "Find and create color palettes with Color Finder. Our tool helps you generate, preview, and apply color variations in real-time.",
+      "Explore Color Finder's collection of CSS tools, including gradient generators, color palette creators, contrast checkers, and more. Enhance your web development projects with accessible and visually appealing designs.",
     url: "https://colorfinder.app",
     siteName: "Color Finder",
     images: [
@@ -34,8 +34,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Color Finder - Create Color Palettes Easily",
-    description: "Find, create and test your color palettes with Color Finder.",
+    title: "Color Finder - Create Color Palettes and Styles Easily",
+    description:
+      "Color Finder offers a suite of CSS tools including gradient generators, color palette creators, and contrast checkers. Streamline your design process and create stunning, accessible websites.",
     images: [
       "https://colorfinder.app/api/image/colorFinderOpenGraph?w=1200&q=90",
     ],

@@ -1,11 +1,7 @@
 import { ThemeToggle } from "@/components/ThemeChanger/ThemeToogle"
 import { ColorWheel } from "@/components/ColorWheel/ColorWheel"
-import Link from "next/link"
 import { cn } from "@/utils/cn"
-import { Suspense } from "react"
-import { HomeLinkClient } from "./HomeLinkClient"
-import { ContastCheckClient } from "./ContastCheckClient"
-import { CssToolsClient } from "./CssToolsClient"
+import { Link } from "../Link/Link"
 
 export function Navigation() {
   return (
@@ -14,16 +10,10 @@ export function Navigation() {
         <div className="flex justify-between w-full max-w-[1920px] px-4 py-2 z-20">
           <div className="flex items-center text-4xl text-text-inverse-light dark:text-text-inverse-light py-1">
             <ColorWheel />
-            <Suspense
-              fallback={
-                <Link href="/">
-                  <span className="ml-2 font-bold">Color</span>
-                  <span>finder</span>
-                </Link>
-              }
-            >
-              <HomeLinkClient />
-            </Suspense>
+            <Link href="/">
+              <span className="ml-2 font-bold">Color</span>
+              <span>finder</span>
+            </Link>
           </div>
           <ThemeToggle />
         </div>
@@ -34,14 +24,8 @@ export function Navigation() {
             "border-t-2 border-slate-700"
           )}
         >
-          <Suspense
-            fallback={<Link href="/contrast-check">Contrast Check</Link>}
-          >
-            <ContastCheckClient />
-          </Suspense>
-          <Suspense fallback={<Link href="/css-tools">CSS Tools</Link>}>
-            <CssToolsClient />
-          </Suspense>
+          <Link href="/contrast-check">Contrast Check</Link>
+          <Link href="/css-tools/gradient-creator">Gradient Creator</Link>
         </div>
       </div>
     </div>

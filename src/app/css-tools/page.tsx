@@ -1,26 +1,43 @@
-import { ContentContainer } from "@/components/Layout/ContentContainer"
-import { LayoutContainer } from "@/components/Layout/LayoutContainer"
-import { GradientSection } from "./_components/GradientSection"
 import chroma from "chroma-js"
-import { DEFAULT_COLOR } from "@/components/constants"
 import { generateColorValues } from "@/components/Colors/generateColorValues"
-import { Suspense } from "react"
+import { DEFAULT_COLOR } from "@/components/constants"
+import { LayoutContainer } from "@/components/Layout/LayoutContainer"
+import { Link } from "@/components/Link/Link"
+import { Card } from "@/components/ExampleSection/Examples/Card/Card"
 import { Metadata } from "next"
-import "./grid.css"
 
 export const metadata: Metadata = {
-  title: "Gradient Generator | Create Custom CSS & Tailwind Gradients",
-  description: `Design and customize stunning gradients with our Gradient Generator. Easily adjust colors, set angles, and add midpoints to create dynamic CSS and Tailwind gradients for your web projects. Get instant code and Tailwind class generation to enhance your designs seamlessly.`,
+  title: "CSS Tools | A collection of helpful tools for CSS styling",
+  description: `Explore our comprehensive collection of CSS tools designed to simplify and enhance your styling workflow. From gradient generators to color contrast checkers, find the right tools to streamline your CSS development and create visually stunning, accessible designs with ease.`,
   alternates: {
     canonical: "/css-tools",
   },
+}
+
+function LinkCard({
+  headline,
+  href,
+  children,
+}: {
+  headline: string
+  href: string
+  children: React.ReactNode
+}) {
+  return (
+    <Link href={href} className="block max-w-[400px]">
+      <Card horizontalPadding verticalPadding rounded="rounded-2xl">
+        <h3 className="mb-4">{headline}</h3>
+        {children}
+      </Card>
+    </Link>
+  )
 }
 
 interface Props {
   searchParams: { [key: string]: string | string[] | undefined }
 }
 
-export default function CssToolsPage({ searchParams }: Props) {
+export default function Home({ searchParams }: Props) {
   const hex = searchParams.hex
 
   let cssVariables = ""
@@ -38,39 +55,25 @@ export default function CssToolsPage({ searchParams }: Props) {
   return (
     <>
       <style>{`:root { ${cssVariables} }`}</style>
-      <div className="header-space">
+      <div className="header-space p-4">
         <LayoutContainer>
-          <div className="css-tools-grid">
-            <div style={{ gridArea: "headerTitle" }}>
-              <ContentContainer className="w-full h-full">
-                <h1 className="max-w-[300px]">
-                  <span className="font-black">Create</span> your styles{" "}
-                  <span className="font-black">Easily</span>
-                </h1>
-              </ContentContainer>
-            </div>
+          <h1 className="py-4">CSS Tools</h1>
 
-            <div style={{ gridArea: "headerText" }}>
-              <ContentContainer className="flex w-full h-full">
-                <div className="self-end">
-                  <p className="font-semibold">
-                    Use our <strong>Gradient Generator</strong> to create
-                    beautiful custom gradients for your projects.{" "}
-                    <strong>Adjust colors, angles, and add midpoints</strong> to
-                    see <strong>real-time previews</strong> and instantly
-                    generate the CSS code you need. Perfect for developers and
-                    designers who want{" "}
-                    <strong>fast, flexible gradient creation</strong>.
-                  </p>
-                </div>
-              </ContentContainer>
-            </div>
+          <h2 className="py-4">Overview</h2>
 
-            <Suspense fallback={null}>
-              <GradientSection />
-            </Suspense>
+          <div className="pt-4 pb-16">
+            <LinkCard
+              href="/css-tools/gradient-creator"
+              headline="Gradient Creator"
+            >
+              <div className="rainbow-linear h-32 rounded-xl mb-4" />
+              <p>
+                The <strong>Gradient Creator</strong> is an interactive tool to
+                generate gradients in various forms and colors. It automatically
+                returns the required CSS code.
+              </p>
+            </LinkCard>
           </div>
-          <div className="h-40"></div>
         </LayoutContainer>
       </div>
     </>
