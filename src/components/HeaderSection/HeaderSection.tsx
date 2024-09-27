@@ -2,7 +2,7 @@ import { ContentContainer } from "../Layout/ContentContainer"
 
 export function HeaderSection() {
   return (
-    <div className="flex justify-center w-full mt-[102px]">
+    <div className="flex justify-center w-full header-space">
       <div className="flex flex-col sm:flex-row max-w-[1200px]">
         <ContentContainer className="w-full sm:w-1/2 mb-[3px] sm:mb-[0px] sm:mr-[3px]">
           <h1 className="max-w-[300px]">

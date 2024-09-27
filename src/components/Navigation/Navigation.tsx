@@ -2,6 +2,7 @@ import { ThemeToggle } from "@/components/ThemeChanger/ThemeToogle"
 import { ColorWheel } from "@/components/ColorWheel/ColorWheel"
 import { cn } from "@/utils/cn"
 import { Link } from "../Link/Link"
+import { NavigationLinks } from "./NavigationLinks"
 
 export function Navigation() {
   return (
@@ -24,8 +25,7 @@ export function Navigation() {
             "border-t-2 border-slate-700"
           )}
         >
-          <Link href="/contrast-check">Contrast Check</Link>
-          <Link href="/css-tools/gradient-creator">Gradient Creator</Link>
+          <NavigationLinks />
         </div>
       </div>
     </div>

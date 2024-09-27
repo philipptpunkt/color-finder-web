@@ -1,7 +1,7 @@
 import { Color } from "./types"
 import { ColorPad } from "./ColorPad"
-import "./styles.css"
 import { DEFAULT_LIGHTNESS_THRESHOLD } from "../constants"
+import "./styles.css"
 
 interface ColorsSectionProps {
   colors: Array<Color>
