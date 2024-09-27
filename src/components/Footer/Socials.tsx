@@ -32,7 +32,7 @@ export function Socials({ className }: { className?: string }) {
             key={entry.id}
             href={entry.link}
             target="_blank"
-            className="mr-4"
+            className="mr-4 hover:scale-[110%]"
           >
             <Icon iconName={entry.icon} />
           </Link>

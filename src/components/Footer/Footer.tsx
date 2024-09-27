@@ -36,11 +36,28 @@ const contentPageLinks = [
 
 const otherPageLinks = [
   {
+    href: "https://forms.gle/Y15qL7wZgdyTHs9P7",
+    label: "Feedback",
+    subpage: false,
+  },
+  {
     href: "/legal-notice",
     label: "Legal\u00A0Notice",
     subpage: false,
   },
 ]
+
+function LinkItem({ href, label }: { href: string; label: string }) {
+  const isExternal = href.startsWith("http")
+  if (isExternal) {
+    return (
+      <a href={href} target="_blank">
+        {label}
+      </a>
+    )
+  }
+  return <Link href={href}>{label}</Link>
+}
 
 export function Footer() {
   return (
@@ -49,8 +66,17 @@ export function Footer() {
         <ContentContainer className="w-full sm:w-1/2 mb-[3px] sm:mb-0 sm:mr-[3px]">
           <ul>
             {contentPageLinks.map((link) => (
-              <li key={link.href} className={cn({ "pl-4": link.subpage })}>
-                <Link href={link.href}>{link.label}</Link>
+              <li
+                key={link.href}
+                className={cn(
+                  "py-1 px-4 rounded-sm",
+                  "hover:bg-slate-300 dark:hover:bg-slate-800",
+                  {
+                    "pl-8": link.subpage,
+                  }
+                )}
+              >
+                <LinkItem href={link.href} label={link.label} />
               </li>
             ))}
           </ul>
@@ -59,15 +85,26 @@ export function Footer() {
           <ul>
             {otherPageLinks.map((link) => {
               return (
-                <li key={link.href} className={cn({ "pl-4": link.subpage })}>
-                  <Link href={link.href}>{link.label}</Link>
+                <li
+                  key={link.href}
+                  className={cn(
+                    "py-1 px-4 rounded-sm",
+                    "hover:bg-slate-300 dark:hover:bg-slate-800",
+                    {
+                      "pl-8": link.subpage,
+                    }
+                  )}
+                >
+                  <LinkItem href={link.href} label={link.label} />
                 </li>
               )
             })}
           </ul>
 
-          <Socials className="my-8" />
-          <p>&copy; 2024 Philipp&nbsp;Trentmann | Color&nbsp;Finder</p>
+          <Socials className="my-8 px-4" />
+          <p className="px-4">
+            &copy; 2024 Philipp&nbsp;Trentmann | Color&nbsp;Finder
+          </p>
         </ContentContainer>
       </div>
     </LayoutContainer>
