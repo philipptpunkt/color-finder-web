@@ -20,7 +20,6 @@ export function LinkItem({ title, href, description }: LinkItemProps) {
     <li>
       <Link legacyBehavior passHref href={href}>
         <NavigationMenuLink
-          // asChild
           active={isActive}
           className={cn(
             "flex flex-col",

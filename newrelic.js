@@ -17,6 +17,7 @@ exports.config = {
    * by the `newrelic` agent and ship logs to New Relic so that they can be
    * viewed in the dashboard.
    */
+  app_nam: "colorfinder",
   application_logging: {
     forwarding: {
       enabled: true,

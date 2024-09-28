@@ -21,7 +21,7 @@ export const NavigationLinks = () => {
               iconName={IconName.icCaretDown}
               className={cn(
                 "w-4 h-4 text-text-inverse-light",
-                "transition-transform duration-[250] ease-in group-data-[state=open]:-rotate-180"
+                "transition-transform duration-300 ease-in group-data-[state=open]:-rotate-180"
               )}
               aria-hidden
             />
@@ -43,7 +43,7 @@ export const NavigationLinks = () => {
               iconName={IconName.icCaretDown}
               className={cn(
                 "w-4 h-4 text-text-inverse-light",
-                "transition-transform duration-[250] ease-in group-data-[state=open]:-rotate-180"
+                "transition-transform duration-300 ease-in group-data-[state=open]:-rotate-180"
               )}
               aria-hidden
             />

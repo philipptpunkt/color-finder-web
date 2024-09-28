@@ -64,6 +64,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <NewRelicBrowser />
+      </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class">
           <ToastProvider>
@@ -72,7 +75,6 @@ export default function RootLayout({
             <Footer />
           </ToastProvider>
         </ThemeProvider>
-        <NewRelicBrowser />
       </body>
     </html>
   )
