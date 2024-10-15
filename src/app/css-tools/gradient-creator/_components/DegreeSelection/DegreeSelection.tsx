@@ -1,4 +1,4 @@
-import { Input } from "@/design-system/Input/Input"
+import { Input } from "@/design-system/Input"
 import { Wheel } from "./Wheel"
 import GradientTypeSelection from "./GradientTypeSelection"
 import { GradientType } from "../GradientSection"

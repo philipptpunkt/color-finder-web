@@ -1,6 +1,6 @@
 "use client"
 
-import { Radio } from "@/design-system/Input/Radio"
+import { Radio } from "@/design-system/Input"
 
 export default function ComponentSelector({
   selected,

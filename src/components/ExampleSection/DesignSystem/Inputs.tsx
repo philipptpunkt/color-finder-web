@@ -1,4 +1,4 @@
-import { Input } from "@/design-system/Input/Input"
+import { Input } from "@/design-system/Input"
 import { Card } from "../Examples/Card/Card"
 
 export function Inputs() {

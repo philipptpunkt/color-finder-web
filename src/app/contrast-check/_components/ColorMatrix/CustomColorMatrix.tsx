@@ -59,7 +59,8 @@ export function CustomColorMatrix({
   }, [selectedOption, selectedStandard])
 
   return (
-    <div className="px-4">
+    <section className="relative px-4">
+      <div id="contrast-matrix" className="absolute top-[-130px]" />
       <h2 className="my-8">Custom Color Contrast Matrix</h2>
 
       <div className="flex mb-4">
@@ -142,6 +143,6 @@ export function CustomColorMatrix({
           </tbody>
         </table>
       </div>
-    </div>
+    </section>
   )
 }

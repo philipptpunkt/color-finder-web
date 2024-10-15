@@ -12,7 +12,12 @@ function ColorContainer({ children }: { children: React.ReactNode }) {
   return (
     <div className="lg:flex lg:flex-col lg:items-center">
       <div className="w-full lg:max-w-[1200px]">
-        <h2 className="px-4 my-4">Generated Colors</h2>
+        <div className="flex flex-col sm:flex-row sm:justify-between px-4 my-4 sm:items-end">
+          <h2 className="">Generated Colors</h2>
+          <a href="/contrast-check#contrast-matrix">
+            <p className="mt-1 sm:mt-0 font-semibold">Contrast Matrix</p>
+          </a>
+        </div>
         <div className="flex flex-col sm:flex-row">{children}</div>
       </div>
     </div>

@@ -5,7 +5,7 @@ import { usePathname, useRouter } from "next/navigation"
 import { useCallback, useEffect, useState } from "react"
 import { ColorPicker } from "../ColorPicker/ColorPicker"
 import { useSearchParams } from "@/utils/useSearchParams"
-import { Input } from "@/design-system/Input/Input"
+import { Input } from "@/design-system/Input"
 
 export function ColorInputSection() {
   const router = useRouter()

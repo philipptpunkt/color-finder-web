@@ -22,10 +22,10 @@ interface ShadowSettingsProps {
   setYOffset: (value: number) => void
   blurRadius: number
   setBlurRadius: (value: number) => void
-  spreadRadius: number
-  setSpreadRadius: (value: number) => void
   color: string
   setColor: (value: string) => void
+  textColor: string
+  setTextColor: (value: string) => void
 }
 
 export function ShadowSettings({
@@ -35,21 +35,27 @@ export function ShadowSettings({
   setYOffset,
   blurRadius,
   setBlurRadius,
-  spreadRadius,
-  setSpreadRadius,
   color,
   setColor,
+  textColor,
+  setTextColor,
 }: ShadowSettingsProps) {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState<false | "text" | "shadow">(false)
 
   function applyColor(value: string) {
-    setColor(value)
+    if (isOpen === "shadow") {
+      setColor(value)
+    }
+    if (isOpen === "text") {
+      setTextColor(value)
+    }
     setIsOpen(false)
   }
 
   const rgba = chroma(color).rgba()
 
-  const originalLightness = chroma(color).get("hsl.l")
+  const originalLightnessText = chroma(textColor).get("hsl.l")
+  const originalLightnessShadow = chroma(color).get("hsl.l")
 
   return (
     <div
@@ -77,29 +83,47 @@ export function ShadowSettings({
         value={blurRadius}
         onChange={setBlurRadius}
       />
-      <Slider
-        label="Shadow Size / Spread Radius"
-        min={-50}
-        max={50}
-        value={spreadRadius}
-        onChange={setSpreadRadius}
-      />
 
       <div>
+        <p className="font-semibold mb-2">Text Color</p>
+        <div className="flex gap-4 mb-4">
+          <div
+            className="flex justify-center items-center h-12 w-full rounded-lg"
+            style={{ backgroundColor: textColor }}
+            onClick={() => setIsOpen("text")}
+          >
+            <Icon
+              iconName={IconName.icPaintBucket}
+              className={cn("text-custom-400", {
+                "text-text-inverse-light dark:text-text-inverse-ligh":
+                  originalLightnessText < DEFAULT_LIGHTNESS_THRESHOLD,
+                "text-text-inverse-dark dark:text-text-inverse-dark":
+                  originalLightnessText >= DEFAULT_LIGHTNESS_THRESHOLD,
+              })}
+            />
+          </div>
+          <InputWithLabel
+            label="Hex"
+            value={textColor}
+            readOnly
+            onChange={() => undefined}
+          />
+        </div>
+
         <p className="font-semibold mb-2">Shadow Color</p>
         <div className="flex gap-4 mb-4">
           <div
             className="flex justify-center items-center h-12 w-full rounded-lg"
             style={{ backgroundColor: color }}
-            onClick={() => setIsOpen(true)}
+            onClick={() => setIsOpen("shadow")}
           >
             <Icon
               iconName={IconName.icPaintBucket}
               className={cn({
                 "text-text-inverse-light dark:text-text-inverse-light":
-                  originalLightness < DEFAULT_LIGHTNESS_THRESHOLD,
+                  originalLightnessShadow < DEFAULT_LIGHTNESS_THRESHOLD,
                 "text-text-inverse-dark dark:text-text-inverse-dark":
-                  originalLightness >= DEFAULT_LIGHTNESS_THRESHOLD,
+                  originalLightnessShadow >= DEFAULT_LIGHTNESS_THRESHOLD,
               })}
             />
           </div>

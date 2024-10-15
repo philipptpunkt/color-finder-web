@@ -32,6 +32,11 @@ const contentPageLinks = [
     label: "Box\u00A0Shadow\u00A0Creator",
     subpage: true,
   },
+  {
+    href: "/css-tools/text-shadow-creator",
+    label: "Text\u00A0Shadow\u00A0Creator",
+    subpage: true,
+  },
 ]
 
 const otherPageLinks = [

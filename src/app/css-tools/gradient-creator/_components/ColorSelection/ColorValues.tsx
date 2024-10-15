@@ -1,4 +1,4 @@
-import { InputWithLabel } from "@/design-system/Input/InputWithLabel"
+import { InputWithLabel } from "@/design-system/Input"
 import chroma from "chroma-js"
 
 interface ColorValuesProps {
