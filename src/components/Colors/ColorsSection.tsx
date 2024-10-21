@@ -1,6 +1,7 @@
 import { Color } from "./types"
 import { ColorPad } from "./ColorPad"
 import { DEFAULT_LIGHTNESS_THRESHOLD } from "../constants"
+import { ContrastMatrixLink } from "./ContrastMatrixLink"
 import "./styles.css"
 
 interface ColorsSectionProps {
@@ -14,9 +15,7 @@ function ColorContainer({ children }: { children: React.ReactNode }) {
       <div className="w-full lg:max-w-[1200px]">
         <div className="flex flex-col sm:flex-row sm:justify-between px-4 my-4 sm:items-end">
           <h2 className="">Generated Colors</h2>
-          <a href="/contrast-check#contrast-matrix">
-            <p className="mt-1 sm:mt-0 font-semibold">Contrast Matrix</p>
-          </a>
+          <ContrastMatrixLink />
         </div>
         <div className="flex flex-col sm:flex-row">{children}</div>
       </div>

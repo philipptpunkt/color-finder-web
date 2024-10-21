@@ -1,12 +1,10 @@
 import { ContentContainer } from "@/components/Layout/ContentContainer"
 import { LayoutContainer } from "@/components/Layout/LayoutContainer"
-import chroma from "chroma-js"
-import { DEFAULT_COLOR } from "@/components/constants"
-import { generateColorValues } from "@/components/Colors/generateColorValues"
 import { Suspense } from "react"
 import { Metadata } from "next"
 import "./grid.css"
 import { ShadowSection } from "./_components/ShadowSection"
+import { WriteCssVariables } from "@/components/WriteCssVariables/WriteCssVariables"
 
 export const metadata: Metadata = {
   title: "Text Shadow Creator | Create Custom CSS & Tailwind Text Shadows",
@@ -21,23 +19,9 @@ interface Props {
 }
 
 export default function TextShadowCreatorPage({ searchParams }: Props) {
-  const hex = searchParams.hex
-
-  let cssVariables = ""
-
-  const hexValue =
-    typeof hex === "string" && chroma.valid(hex) ? hex : DEFAULT_COLOR
-
-  const colorValues = generateColorValues(hexValue)
-
-  colorValues.forEach((color) => {
-    const rgbColorValue = chroma(color.color).rgb().join(", ")
-    cssVariables += `--custom-color-${color.position}: ${rgbColorValue}; `
-  })
-
   return (
     <>
-      <style>{`:root { ${cssVariables} }`}</style>
+      <WriteCssVariables searchParams={searchParams} />
       <div className="header-space">
         <LayoutContainer>
           <div className="text-shadow-grid">

@@ -1,12 +1,11 @@
-import chroma from "chroma-js"
-import { generateColorValues } from "@/components/Colors/generateColorValues"
-import { DEFAULT_COLOR } from "@/components/constants"
 import { LayoutContainer } from "@/components/Layout/LayoutContainer"
 import { Metadata } from "next"
 import {
   NavigationCardBoxShadow,
   NavigationCardGradient,
 } from "@/components/NavigationItems"
+import { NavigationCardTextShadow } from "@/components/NavigationItems/NavigationCardTextShadow"
+import { WriteCssVariables } from "@/components/WriteCssVariables/WriteCssVariables"
 
 export const metadata: Metadata = {
   title: "CSS Tools | A collection of helpful tools for CSS styling",
@@ -21,23 +20,9 @@ interface Props {
 }
 
 export default function CssToolsPage({ searchParams }: Props) {
-  const hex = searchParams.hex
-
-  let cssVariables = ""
-
-  const hexValue =
-    typeof hex === "string" && chroma.valid(hex) ? hex : DEFAULT_COLOR
-
-  const colorValues = generateColorValues(hexValue)
-
-  colorValues.forEach((color) => {
-    const rgbColorValue = chroma(color.color).rgb().join(", ")
-    cssVariables += `--custom-color-${color.position}: ${rgbColorValue}; `
-  })
-
   return (
     <>
-      <style>{`:root { ${cssVariables} }`}</style>
+      <WriteCssVariables searchParams={searchParams} />
       <div className="header-space p-4">
         <LayoutContainer>
           <h1 className="py-4">CSS Tools</h1>
@@ -47,6 +32,7 @@ export default function CssToolsPage({ searchParams }: Props) {
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-8 pt-4 pb-16">
             <NavigationCardGradient />
             <NavigationCardBoxShadow />
+            <NavigationCardTextShadow />
           </div>
         </LayoutContainer>
       </div>

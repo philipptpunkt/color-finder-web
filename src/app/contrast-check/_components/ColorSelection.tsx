@@ -17,6 +17,8 @@ import {
   WCAG_AAA_LARGE_TEXT_CONTRAST_RATIO,
   WCAG_AAA_NORMAL_TEXT_CONTRAST_RATIO,
 } from "./constants"
+import chroma from "chroma-js"
+import { DEFAULT_LIGHTNESS_THRESHOLD } from "@/components/constants"
 
 export function ColorSelection({
   initialColorValue,
@@ -80,6 +82,10 @@ export function ColorSelection({
       },
     }
   }, [foregroundColor, backgroundColor])
+
+  const originalLightness = foregroundColor
+    ? chroma(foregroundColor).get("hsl.l")
+    : null
 
   const wcagaaColorUserInterfacePass = contrastCheckResults.compliance.wcagAAui
   const wcagaaColorUserInterface = wcagaaColorUserInterfacePass
@@ -166,7 +172,17 @@ export function ColorSelection({
               style={{ backgroundColor: backgroundColor || "" }}
             >
               <button
-                className="rounded-md p-2 w-full border border-slate-300 mb-2"
+                className={cn(
+                  "rounded-md p-2 w-full border border-slate-300 mb-2",
+                  {
+                    "text-text-inverse-light dark:text-text-inverse-light":
+                      originalLightness !== null &&
+                      originalLightness < DEFAULT_LIGHTNESS_THRESHOLD,
+                    "text-text-inverse-dark dark:text-text-inverse-dark":
+                      originalLightness !== null &&
+                      originalLightness >= DEFAULT_LIGHTNESS_THRESHOLD,
+                  }
+                )}
                 style={{ backgroundColor: foregroundColor || "" }}
               >
                 Click Me
