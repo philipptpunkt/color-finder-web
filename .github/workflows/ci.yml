@@ -57,7 +57,7 @@ jobs:
   #         checkAllCommitMessages: true
   #         accessToken: ${{ secrets.GITHUB_TOKEN }}
   #         pattern: '^(Revert
-  #           ")?(feat|fix|docs|style|refactor|perf|test|workflow|ci|chore|types|build|wip|merge|release)(\((INV|QA)-\d+\))?:\s.+'
+  #           ")?(feat|fix|docs|style|refactor|perf|test|workflow|ci|chore|types|build|wip|merge|release)(\((COFWE)-\d+\))?:\s.+'
   #         flags: 'gm'
   #         error: 'Your commit message should be of the format
-  #           `[type](INV-ticket_number): brief description of the changes`'
+  #           `[type](COFWE-ticket_number): brief description of the changes`'
