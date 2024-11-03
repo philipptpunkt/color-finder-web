@@ -1,8 +1,8 @@
+import chroma from "chroma-js"
 import { Button } from "@/components/Buttons/Button"
 import { DEFAULT_LIGHTNESS_THRESHOLD } from "@/components/constants"
 import { ContentContainer } from "@/components/Layout/ContentContainer"
 import { cn } from "@/utils/cn"
-import chroma from "chroma-js"
 
 export function ColorBox({
   title,

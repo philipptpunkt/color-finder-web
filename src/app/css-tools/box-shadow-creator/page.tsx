@@ -3,8 +3,8 @@ import { LayoutContainer } from "@/components/Layout/LayoutContainer"
 import { Suspense } from "react"
 import { Metadata } from "next"
 import { ShadowSection } from "./_components/ShadowSection"
-import "./grid.css"
 import { WriteCssVariables } from "@/components/WriteCssVariables/WriteCssVariables"
+import "./grid.css"
 
 export const metadata: Metadata = {
   title: "Box Shadow Creator | Create Custom CSS & Tailwind Box Shadows",

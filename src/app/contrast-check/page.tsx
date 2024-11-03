@@ -1,13 +1,13 @@
+import chroma from "chroma-js"
 import { ContentContainer } from "@/components/Layout/ContentContainer"
 import { LayoutContainer } from "@/components/Layout/LayoutContainer"
 import { ColorSelection } from "./_components/ColorSelection"
-import chroma from "chroma-js"
 import { generateColorValues } from "@/components/Colors/generateColorValues"
 import { DEFAULT_COLOR } from "@/components/constants"
-import "./grid.css"
 import { Article } from "./_components/Article"
 import { CustomColorMatrix } from "./_components/ColorMatrix/CustomColorMatrix"
 import { Metadata } from "next"
+import "./grid.css"
 
 export const metadata: Metadata = {
   title: "Color Contrast Checker | WCAG Accessibility Standards",
