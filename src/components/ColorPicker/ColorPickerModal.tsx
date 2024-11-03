@@ -10,6 +10,7 @@ interface ColorPickerModalProps {
   close: () => void
   applyColor: (value: string) => void
   initialColorValue: string | null
+  title?: string
   enableAlphaValue?: boolean
   className?: string
 }
@@ -18,6 +19,7 @@ export default function ColorPickerModal({
   close,
   applyColor,
   initialColorValue,
+  title,
   enableAlphaValue,
   className,
 }: ColorPickerModalProps) {
@@ -36,7 +38,9 @@ export default function ColorPickerModal({
       )}
       onClick={(event) => event.stopPropagation()}
     >
-      <p className="text-2xl font-bold mb-4">Pick a Color</p>
+      <p className="text-2xl font-bold mb-4">
+        {title ? title : "Pick a Color"}
+      </p>
       <div className="rounded-lg overflow-hidden mb-4">
         <Saturation height={200} color={color} onChange={setColor} />
       </div>

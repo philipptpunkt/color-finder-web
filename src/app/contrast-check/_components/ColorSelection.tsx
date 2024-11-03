@@ -44,6 +44,13 @@ export function ColorSelection({
     [isOpen]
   )
 
+  const preselectedColor =
+    isOpen === "fore"
+      ? foregroundColor
+      : isOpen === "back"
+      ? backgroundColor
+      : initialColorValue
+
   const contrastCheckResults: {
     contrastRatio: number | "notSet"
     compliance: {
@@ -203,11 +210,16 @@ export function ColorSelection({
             <ColorPickerModal
               close={() => setIsOpen(false)}
               applyColor={applyColor}
-              initialColorValue={initialColorValue}
+              initialColorValue={preselectedColor}
               enableAlphaValue={true}
               className={cn({
                 "no-document-scroll": isOpen,
               })}
+              title={
+                isOpen === "fore"
+                  ? "Pick a Foreground Color"
+                  : "Pick a Background Color"
+              }
             />
           </Suspense>
         </Modal>
