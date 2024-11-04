@@ -6,7 +6,6 @@ import { ThemeProvider } from "next-themes"
 import { Footer } from "@/components/Footer/Footer"
 import { ToastProvider } from "@/design-system/Toast/ToastProvider"
 import { Navigation } from "@/components/Navigation/Navigation"
-import { headers } from "next/headers"
 import { BASE_URL } from "@/components/constants"
 import "./globals.css"
 
@@ -43,20 +42,16 @@ export const metadata: Metadata = {
   },
 }
 
-async function NewRelicBrowser({ nonce }: { nonce: string | undefined }) {
+async function NewRelicBrowser() {
   const browserTimingHeader = newrelic.getBrowserTimingHeader({
     hasToRemoveScriptWrapper: true,
-    nonce: nonce,
   })
-
-  // console.log(">>>> SCRIPT", browserTimingHeader)
 
   return (
     <Script
       id="nr-browser-agent"
       strategy="beforeInteractive"
       dangerouslySetInnerHTML={{ __html: browserTimingHeader }}
-      nonce={nonce}
     />
   )
 }
@@ -66,14 +61,8 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const nonce = (await headers()).get("x-nonce") ?? undefined
-
-  // console.log(">>> nonce", nonce)
-
   return (
     <html lang="en" suppressHydrationWarning>
-      {/* <head>
-      </head> */}
       <body className={inter.className}>
         <ThemeProvider attribute="class">
           <ToastProvider>
@@ -82,7 +71,7 @@ export default async function RootLayout({
             <Footer />
           </ToastProvider>
         </ThemeProvider>
-        <NewRelicBrowser nonce={nonce} />
+        <NewRelicBrowser />
       </body>
     </html>
   )

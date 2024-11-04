@@ -2,8 +2,7 @@ import type { NextRequest } from "next/server"
 import { NextResponse } from "next/server"
 import { notFound } from "next/navigation"
 import { images } from "./assets/images"
-
-const COLOR_FINDER_URL = "https://www.colorfinder.app"
+import { BASE_URL } from "@/components/constants"
 
 const maxAge = 60 * 60 * 24 * 7 // 7 days
 
@@ -57,7 +56,7 @@ export function GET(
       "Cache-Control": `public, s-maxage=${maxAge}, max-age=${maxAge}, stale-while-revalidate=${
         maxAge * 10
       }, stale-if-error=${maxAge * 10}`,
-      Location: `${COLOR_FINDER_URL}/_next/image?url=${encodeURIComponent(
+      Location: `${BASE_URL}/_next/image?url=${encodeURIComponent(
         image.src
       )}&w=${width}&q=${quality}`,
     },
