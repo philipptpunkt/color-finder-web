@@ -21,6 +21,12 @@ const socials = [
     icon: IconName.icInstagram,
     link: "https://www.instagram.com/philipptpunkt/",
   },
+  {
+    id: 4,
+    title: "Bluesky",
+    icon: IconName.icButterfly,
+    link: "https://bsky.app/profile/philipptpunkt.bsky.social",
+  },
 ]
 
 export function Socials({ className }: { className?: string }) {

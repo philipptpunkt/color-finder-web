@@ -19,6 +19,7 @@ import {
 } from "./constants"
 import chroma from "chroma-js"
 import { DEFAULT_LIGHTNESS_THRESHOLD } from "@/components/constants"
+import { useColorInput } from "./useColorInput"
 
 export function ColorSelection({
   initialColorValue,
@@ -27,21 +28,32 @@ export function ColorSelection({
 }) {
   const [isOpen, setIsOpen] = useState<"fore" | "back" | false>(false)
 
-  const [foregroundColor, setForegroundColor] = useState<string | null>(null)
-  const [backgroundColor, setBackgroundColor] = useState<string | null>(null)
+  const {
+    input: foregroundInput,
+    onChange: foregroundOnChange,
+    colorValue: foregroundColor,
+    applyColor: applyForgroundColor,
+  } = useColorInput({ initialColorValue: null })
+
+  const {
+    input: backgroundInput,
+    onChange: backgroundOnChange,
+    colorValue: backgroundColor,
+    applyColor: applyBackgroundColor,
+  } = useColorInput({ initialColorValue: null })
 
   const applyColor = useCallback(
     (value: string) => {
       if (isOpen === "fore") {
-        setForegroundColor(value)
+        applyForgroundColor(value)
       }
 
       if (isOpen === "back") {
-        setBackgroundColor(value)
+        applyBackgroundColor(value)
       }
       setIsOpen(false)
     },
-    [isOpen]
+    [applyForgroundColor, applyBackgroundColor, isOpen]
   )
 
   const preselectedColor =
@@ -106,6 +118,8 @@ export function ColorSelection({
           title="Foreground Color"
           color={foregroundColor}
           setIsOpen={() => setIsOpen("fore")}
+          input={foregroundInput}
+          onChange={foregroundOnChange}
           className="h-full"
         />
       </div>
@@ -114,6 +128,8 @@ export function ColorSelection({
           title="Background Color"
           color={backgroundColor}
           setIsOpen={() => setIsOpen("back")}
+          input={backgroundInput}
+          onChange={backgroundOnChange}
           className="h-full"
         />
       </div>

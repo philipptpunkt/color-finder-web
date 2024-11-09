@@ -2,6 +2,7 @@ export enum IconName {
   icArrowBendDownRight = "icArrowBendDownRight",
   icArrowBendUpLeft = "icArrowBendUpLeft",
   icArrowClockwise = "icArrowClockwise",
+  icButterfly = "icButterfly",
   icCaretDown = "icCaretDown",
   icChartLine = "icChartLine",
   icCheckCircle = "icCheckCircle",

@@ -2,6 +2,7 @@ import { IconName } from "./IconName"
 import icArrowBendDownRight from "./svgs/ic-arrow-bend-down-right.svg"
 import icArrowBendUpLeft from "./svgs/ic-arrow-bend-up-left.svg"
 import icArrowClockwise from "./svgs/ic-arrows-clockwise.svg"
+import icButterfly from "./svgs/ic-butterfly.svg"
 import icCaretDown from "./svgs/ic-caret-down.svg"
 import icChartLine from "./svgs/ic-chart-line.svg"
 import icCheckCircle from "./svgs/ic-check-circle.svg"
@@ -35,6 +36,7 @@ export const iconUrls = {
   icArrowBendDownRight,
   icArrowBendUpLeft,
   icArrowClockwise,
+  icButterfly,
   icCaretDown,
   icChartLine,
   icCheckCircle,

@@ -23,13 +23,13 @@ export function ColorInputSection() {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value
 
-    const test = value.startsWith("#")
+    const cleanValue = value.startsWith("#")
       ? value
       : value.length > 0
       ? `#${value}`
       : value
 
-    setInput(test)
+    setInput(cleanValue)
   }
 
   useEffect(() => {

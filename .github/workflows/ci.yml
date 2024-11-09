@@ -58,6 +58,6 @@ jobs:
   #         accessToken: ${{ secrets.GITHUB_TOKEN }}
   #         pattern: '^(Revert
   #           ")?(feat|fix|docs|style|refactor|perf|test|workflow|ci|chore|types|build|wip|merge|release)(\((COFWE)-\d+\))?:\s.+'
-  #         flags: 'gm'
-  #         error: 'Your commit message should be of the format
-  #           `[type](COFWE-ticket_number): brief description of the changes`'
+  #         flags: "gm"
+  #         error: "Your commit message should be of the format
+  #           `[type](COFWE-ticket_number): brief description of the changes`"
