@@ -1,9 +1,12 @@
 import chroma from "chroma-js"
-import { PageProps } from "../types"
 import { DEFAULT_COLOR } from "../constants"
 import { generateColorValues } from "../Colors/generateColorValues"
 
-export function WriteCssVariables({ searchParams }: PageProps) {
+interface WriteCssVariablesProps {
+  searchParams: { [key: string]: string | string[] | undefined }
+}
+
+export function WriteCssVariables({ searchParams }: WriteCssVariablesProps) {
   const hex = searchParams.hex
 
   let cssVariables = ""

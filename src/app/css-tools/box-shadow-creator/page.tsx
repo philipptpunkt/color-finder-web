@@ -15,13 +15,14 @@ export const metadata: Metadata = {
 }
 
 interface Props {
-  searchParams: { [key: string]: string | string[] | undefined }
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
-export default function BoxShadowCreatorPage({ searchParams }: Props) {
+export default async function BoxShadowCreatorPage({ searchParams }: Props) {
+  const resolvedSearchParams = await searchParams
   return (
     <>
-      <WriteCssVariables searchParams={searchParams} />
+      <WriteCssVariables searchParams={resolvedSearchParams} />
       <div className="header-space">
         <LayoutContainer>
           <div className="box-shadow-grid">

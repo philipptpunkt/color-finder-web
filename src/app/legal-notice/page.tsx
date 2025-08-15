@@ -30,13 +30,14 @@ function SectionWithHeadline({
 }
 
 interface Props {
-  searchParams: { [key: string]: string | string[] | undefined }
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
-export default function LegalNoticePage({ searchParams }: Props) {
+export default async function LegalNoticePage({ searchParams }: Props) {
+  const resolvedSearchParams = await searchParams
   return (
     <>
-      <WriteCssVariables searchParams={searchParams} />
+      <WriteCssVariables searchParams={resolvedSearchParams} />
       <LayoutContainer>
         <div className="header-space p-4">
           <h1 className="py-4">Impressum</h1>

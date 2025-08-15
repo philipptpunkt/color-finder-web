@@ -16,13 +16,14 @@ export const metadata: Metadata = {
 }
 
 interface Props {
-  searchParams: { [key: string]: string | string[] | undefined }
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
-export default function CssToolsPage({ searchParams }: Props) {
+export default async function CssToolsPage({ searchParams }: Props) {
+  const resolvedSearchParams = await searchParams
   return (
     <>
-      <WriteCssVariables searchParams={searchParams} />
+      <WriteCssVariables searchParams={resolvedSearchParams} />
       <div className="header-space p-4">
         <LayoutContainer>
           <h1 className="py-4">CSS Tools</h1>

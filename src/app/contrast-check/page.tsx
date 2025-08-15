@@ -18,11 +18,12 @@ export const metadata: Metadata = {
 }
 
 interface Props {
-  searchParams: { [key: string]: string | string[] | undefined }
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
-export default function ContrastCheckPage({ searchParams }: Props) {
-  const hex = searchParams.hex
+export default async function ContrastCheckPage({ searchParams }: Props) {
+  const resolvedSearchParams = await searchParams
+  const hex = resolvedSearchParams.hex
 
   let cssVariables = ""
 
