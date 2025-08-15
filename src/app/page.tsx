@@ -1,40 +1,30 @@
-import chroma from "chroma-js"
-import { HeaderSection } from "@/components/HeaderSection/HeaderSection"
-import { ColorsSection } from "@/components/Colors/ColorsSection"
-import { ExampleSection } from "@/components/ExampleSection/ExampleSection"
-import { ColorInputSection } from "@/components/InputSection/InputSection"
-import { generateColorValues } from "@/components/Colors/generateColorValues"
-import { Suspense } from "react"
-import { DEFAULT_COLOR } from "@/components/constants"
+"use client"
 
-interface Props {
-  searchParams: { [key: string]: string | string[] | undefined }
-}
+import { useTheme } from "next-themes"
+import { Header } from "./_components/Header"
+import HeroSection from "./_components/HeroSection"
+import { ToolsSection } from "./_components/ToolsSection"
+import { FeaturesSection } from "./_components/FeaturesSection"
+import { CTASection } from "./_components/CTASection"
+import { Footer } from "./_components/Footer"
 
-export default function Home({ searchParams }: Props) {
-  const hex = searchParams.hex
+export default function HomePage() {
+  const { theme, setTheme } = useTheme()
 
-  let cssVariables = ""
-
-  const hexValue =
-    typeof hex === "string" && chroma.valid(hex) ? hex : DEFAULT_COLOR
-
-  const colorValues = generateColorValues(hexValue)
-
-  colorValues.forEach((color) => {
-    const rgbColorValue = chroma(color.color).rgb().join(", ")
-    cssVariables += `--custom-color-${color.position}: ${rgbColorValue}; `
-  })
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark")
+  }
 
   return (
-    <>
-      <style>{`:root { ${cssVariables} }`}</style>
-      <HeaderSection />
-      <Suspense fallback={null}>
-        <ColorInputSection />
-      </Suspense>
-      <ColorsSection colors={colorValues} hexColor={hexValue} />
-      <ExampleSection />
-    </>
+    <div className="min-h-screen bg-background text-text">
+      <Header onThemeToggle={toggleTheme} />
+      <main>
+        <HeroSection />
+        <ToolsSection />
+        <FeaturesSection />
+        <CTASection />
+      </main>
+      <Footer />
+    </div>
   )
 }

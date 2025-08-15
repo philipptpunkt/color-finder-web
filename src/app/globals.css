@@ -1,8 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "./tokens.css";
+@import "./theme.css";
 
-@layer base {
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@layer components {
   root {
     overflow: auto;
   }
@@ -12,23 +14,28 @@
   }
 
   body {
-    @apply font-light text-text-light dark:text-text-dark bg-background-light dark:bg-background-dark;
+    @apply font-light bg-background;
+    color: var(--color-text);
   }
 
   h1 {
-    @apply font-semibold text-5xl sm:text-6xl tracking-wide text-text-light dark:text-text-dark;
+    @apply font-semibold text-5xl sm:text-6xl tracking-wide;
+    color: var(--color-text);
   }
 
   h2 {
-    @apply font-normal text-xl md:text-2xl lg:text-3xl leading-tight tracking-wide uppercase text-text-light dark:text-text-dark;
+    @apply font-normal text-xl md:text-2xl lg:text-3xl leading-tight tracking-wide uppercase;
+    color: var(--color-text);
   }
 
   h3 {
-    @apply font-semibold text-lg md:text-xl lg:text-2xl text-text-light dark:text-text-dark;
+    @apply font-semibold text-lg md:text-xl lg:text-2xl;
+    color: var(--color-text);
   }
 
   h4 {
-    @apply font-semibold text-lg text-text-light dark:text-text-dark;
+    @apply font-semibold text-lg;
+    color: var(--color-text);
   }
 }
 
@@ -40,7 +47,8 @@
   }
 
   .text-label {
-    @apply text-xs text-text-light-light dark:text-text-light-dark;
+    @apply text-xs;
+    color: var(--color-text-tertiary);
   }
 
   .header-space {

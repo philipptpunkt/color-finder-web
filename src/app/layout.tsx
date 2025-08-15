@@ -1,7 +1,5 @@
 import type { Metadata } from "next"
-import newrelic from "newrelic"
-import Script from "next/script"
-import { Inter } from "next/font/google"
+import { Krona_One, Raleway } from "next/font/google"
 import { ThemeProvider } from "next-themes"
 import { Footer } from "@/components/Footer/Footer"
 import { ToastProvider } from "@/design-system/Toast/ToastProvider"
@@ -9,7 +7,9 @@ import { Navigation } from "@/components/Navigation/Navigation"
 import { BASE_URL } from "@/components/constants"
 import "./globals.css"
 
-const inter = Inter({ subsets: ["latin"] })
+// const inter = Inter({ subsets: ["latin"] })
+// const raleway = Raleway({ subsets: ["latin"] })
+const kronaOne = Krona_One({ subsets: ["latin"], weight: "400" })
 
 export const metadata: Metadata = {
   title: "Color Finder - Create Color Palettes Easily",
@@ -42,20 +42,6 @@ export const metadata: Metadata = {
   },
 }
 
-async function NewRelicBrowser() {
-  const browserTimingHeader = newrelic.getBrowserTimingHeader({
-    hasToRemoveScriptWrapper: true,
-  })
-
-  return (
-    <Script
-      id="nr-browser-agent"
-      strategy="beforeInteractive"
-      dangerouslySetInnerHTML={{ __html: browserTimingHeader }}
-    />
-  )
-}
-
 export default async function RootLayout({
   children,
 }: Readonly<{
@@ -63,15 +49,18 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        <ThemeProvider attribute="class">
+      <body className={kronaOne.className}>
+        <ThemeProvider
+          attribute="data-theme"
+          defaultTheme="system"
+          enableSystem
+        >
           <ToastProvider>
             {children}
-            <Navigation />
-            <Footer />
+            {/* <Navigation /> */}
+            {/* <Footer /> */}
           </ToastProvider>
         </ThemeProvider>
-        <NewRelicBrowser />
       </body>
     </html>
   )

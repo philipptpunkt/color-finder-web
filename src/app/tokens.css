@@ -1,0 +1,285 @@
+@theme {
+  /* === PRIMARY PALETTE === */
+  --color-primary-50: oklch(91.5% 0.037 292);
+  --color-primary-100: oklch(83.6% 0.074 292);
+  --color-primary-200: oklch(75.93% 0.11 291);
+  --color-primary-300: oklch(68.15% 0.144 292);
+  --color-primary-400: oklch(60.37% 0.169 292);
+  --color-primary-500: oklch(52.5% 0.176 292);
+  --color-primary-600: oklch(44.64% 0.16 292);
+  --color-primary-700: oklch(37.65% 0.139 292);
+  --color-primary-800: oklch(30.67% 0.113 292);
+  --color-primary-900: oklch(23.08% 0.086 292);
+  --color-primary-950: oklch(13.74% 0.051 292);
+
+  /* === SECONDARY PALETTE === */
+  --color-secondary-50: oklch(91.54% 0.038 178);
+  --color-secondary-100: oklch(85.43% 0.057 179);
+  --color-secondary-200: oklch(79.4% 0.065 178);
+  --color-secondary-300: oklch(71.73% 0.067 178);
+  --color-secondary-400: oklch(64.18% 0.065 178);
+  --color-secondary-500: oklch(56.33% 0.059 179);
+  --color-secondary-600: oklch(48.54% 0.052 179);
+  --color-secondary-700: oklch(40.81% 0.045 178);
+  --color-secondary-800: oklch(32.8% 0.036 178);
+  --color-secondary-900: oklch(24.25% 0.026 178);
+  --color-secondary-950: oklch(13.5% 0.015 186);
+
+  /* === NEUTRAL PALETTE === */
+  --color-neutral-50: oklch(97.41% 0.003 67);
+  --color-neutral-100: oklch(89.53% 0.011 63);
+  --color-neutral-200: oklch(81.69% 0.02 67);
+  --color-neutral-300: oklch(73.69% 0.024 63);
+  --color-neutral-400: oklch(65.63% 0.026 63);
+  --color-neutral-500: oklch(57.83% 0.026 65);
+  --color-neutral-600: oklch(49.72% 0.023 64);
+  --color-neutral-700: oklch(41.63% 0.02 64);
+  --color-neutral-800: oklch(33.37% 0.017 70);
+  --color-neutral-900: oklch(24.44% 0.013 61);
+  --color-neutral-950: oklch(13.62% 0.006 71);
+
+  /* === NEUTRAL CONTRAST PALETTE === */
+  --color-leaf-50: oklch(91.53% 0.069 121);
+  --color-leaf-100: oklch(84.23% 0.099 122);
+  --color-leaf-200: oklch(76.68% 0.105 121);
+  --color-leaf-300: oklch(69.5% 0.101 122);
+  --color-leaf-400: oklch(62.01% 0.092 121);
+  --color-leaf-500: oklch(54.56% 0.083 122);
+  --color-leaf-600: oklch(47.29% 0.072 121);
+  --color-leaf-700: oklch(39.66% 0.06 122);
+  --color-leaf-800: oklch(32.11% 0.048 121);
+  --color-leaf-900: oklch(23.68% 0.034 121);
+  --color-leaf-950: oklch(13.76% 0.02 124);
+
+  /* === MUTED ACCENT PALETTE === */
+  --color-muted-50: oklch(97% 0.01 140);
+  --color-muted-100: oklch(94% 0.02 140);
+  --color-muted-200: oklch(88% 0.035 140);
+  --color-muted-300: oklch(80% 0.05 140);
+  --color-muted-400: oklch(70% 0.065 140);
+  --color-muted-500: oklch(60% 0.08 140);
+  --color-muted-600: oklch(50% 0.075 140);
+  --color-muted-700: oklch(40% 0.065 140);
+  --color-muted-800: oklch(30% 0.05 140);
+  --color-muted-900: oklch(22% 0.035 140);
+  --color-muted-950: oklch(15% 0.02 140);
+
+  /* === SEMANTIC COLORS === */
+  /* Success - Fresh green for positive actions */
+  --color-success-50: oklch(96% 0.02 150);
+  --color-success-100: oklch(92% 0.04 150);
+  --color-success-200: oklch(85% 0.08 150);
+  --color-success-300: oklch(75% 0.12 150);
+  --color-success-400: oklch(65% 0.16 150);
+  --color-success-500: oklch(55% 0.2 150);
+  --color-success-600: oklch(45% 0.18 150);
+  --color-success-700: oklch(35% 0.15 150);
+  --color-success-800: oklch(25% 0.12 150);
+  --color-success-900: oklch(18% 0.08 150);
+  --color-success-950: oklch(12% 0.05 150);
+
+  /* Warning - Warm amber for caution */
+  --color-warning-50: oklch(96% 0.02 70);
+  --color-warning-100: oklch(92% 0.04 70);
+  --color-warning-200: oklch(85% 0.08 70);
+  --color-warning-300: oklch(75% 0.12 70);
+  --color-warning-400: oklch(65% 0.16 70);
+  --color-warning-500: oklch(55% 0.2 70);
+  --color-warning-600: oklch(45% 0.18 70);
+  --color-warning-700: oklch(35% 0.15 70);
+  --color-warning-800: oklch(25% 0.12 70);
+  --color-warning-900: oklch(18% 0.08 70);
+  --color-warning-950: oklch(12% 0.05 70);
+
+  /* Error - Clear red for errors */
+  --color-error-50: oklch(96% 0.02 25);
+  --color-error-100: oklch(92% 0.04 25);
+  --color-error-200: oklch(85% 0.08 25);
+  --color-error-300: oklch(75% 0.12 25);
+  --color-error-400: oklch(65% 0.16 25);
+  --color-error-500: oklch(55% 0.2 25);
+  --color-error-600: oklch(45% 0.18 25);
+  --color-error-700: oklch(35% 0.15 25);
+  --color-error-800: oklch(25% 0.12 25);
+  --color-error-900: oklch(18% 0.08 25);
+  --color-error-950: oklch(12% 0.05 25);
+
+  /* === CUSTOM DYNAMIC COLORS === */
+  /* For user-generated color palettes */
+  --color-custom-50: rgb(var(--custom-color-50));
+  --color-custom-100: rgb(var(--custom-color-100));
+  --color-custom-200: rgb(var(--custom-color-200));
+  --color-custom-300: rgb(var(--custom-color-300));
+  --color-custom-400: rgb(var(--custom-color-400));
+  --color-custom-500: rgb(var(--custom-color-500));
+  --color-custom-600: rgb(var(--custom-color-600));
+  --color-custom-700: rgb(var(--custom-color-700));
+  --color-custom-800: rgb(var(--custom-color-800));
+  --color-custom-900: rgb(var(--custom-color-900));
+  --color-custom-950: rgb(var(--custom-color-950));
+
+  /* === SURFACE COLORS === */
+  /* Background colors - referencing theme variables */
+  --color-background: var(--theme-color-background);
+  --color-background-secondary: var(--theme-color-background-secondary);
+  --color-background-tertiary: var(--theme-color-background-tertiary);
+  --color-background-muted: var(--theme-color-background-muted);
+  --color-background-highlight: var(--theme-color-background-highlight);
+  --color-background-inverted: var(--theme-color-background-inverted);
+  --color-background-primary: var(--theme-color-background-primary);
+  --color-background-secondary-color: var(
+    --theme-color-background-secondary-color
+  );
+
+  /* === TEXT COLORS === */
+  /* Text colors - referencing theme variables */
+  --color-text: var(--theme-color-text);
+  --color-text-secondary: var(--theme-color-text-secondary);
+  --color-text-tertiary: var(--theme-color-text-tertiary);
+  --color-text-muted: var(--theme-color-text-muted);
+  --color-text-label: var(--theme-color-text-label);
+  --color-text-inverted: var(--theme-color-text-inverted);
+  --color-text-primary: var(--theme-color-text-primary);
+  --color-text-secondary-color: var(--theme-color-text-secondary-color);
+
+  /* === BORDER COLORS === */
+  /* Border colors - referencing theme variables */
+  --color-border: var(--theme-color-border);
+  --color-border-secondary: var(--theme-color-border-secondary);
+  --color-border-muted: var(--theme-color-border-muted);
+  --color-border-primary: var(--theme-color-border-primary);
+  --color-border-secondary-color: var(--theme-color-border-secondary-color);
+
+  /* === SURFACE COLORS === */
+  /* Surface colors - referencing theme variables */
+  --color-surface: var(--theme-color-surface);
+  --color-surface-secondary: var(--theme-color-surface-secondary);
+  --color-surface-elevated: var(--theme-color-surface-elevated);
+  --color-surface-primary: var(--theme-color-surface-primary);
+  --color-surface-secondary-color: var(--theme-color-surface-secondary-color);
+
+  /* === SEMANTIC COLORS === */
+  /* Semantic colors - referencing theme variables */
+  --color-success: var(--theme-color-success);
+  --color-success-background: var(--theme-color-success-background);
+  --color-success-border: var(--theme-color-success-border);
+  --color-warning: var(--theme-color-warning);
+  --color-warning-background: var(--theme-color-warning-background);
+  --color-warning-border: var(--theme-color-warning-border);
+  --color-error: var(--theme-color-error);
+  --color-error-background: var(--theme-color-error-background);
+  --color-error-border: var(--theme-color-error-border);
+
+  /* === SHADOW COLORS === */
+  /* Base shadow color definitions */
+  --color-shadow-light: oklch(15% 0.008 220 / 0.1);
+  --color-shadow-medium: oklch(15% 0.008 220 / 0.15);
+  --color-shadow-dark: oklch(8% 0.005 220 / 0.2);
+  --color-shadow-heavy: oklch(8% 0.005 220 / 0.25);
+
+  /* Shadow colors - referencing theme variables */
+  --color-shadow: var(--theme-color-shadow);
+  --color-shadow-strong: var(--theme-color-shadow-strong);
+
+  /* === UTILITY COLORS === */
+  --color-transparent: transparent;
+  --color-white: oklch(100% 0 0);
+  --color-black: oklch(0% 0 0);
+
+  /* === ANIMATION DEFINITIONS === */
+  --animate-enter-from-right: enterFromRight 250ms ease;
+  --animate-enter-from-left: enterFromLeft 250ms ease;
+  --animate-exit-to-right: exitToRight 250ms ease;
+  --animate-exit-to-left: exitToLeft 250ms ease;
+  --animate-scale-in: scaleIn 200ms ease;
+  --animate-scale-out: scaleOut 200ms ease;
+  --animate-fade-in: fadeIn 200ms ease;
+  --animate-fade-out: fadeOut 200ms ease;
+
+  /* === TRANSFORMS === */
+  --rotate-270: 270deg;
+}
+
+@keyframes enterFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes enterFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes exitToRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+}
+
+@keyframes exitToLeft {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: rotateX(-10deg) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: rotateX(0deg) scale(1);
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    opacity: 1;
+    transform: rotateX(0deg) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: rotateX(-10deg) scale(0.95);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
