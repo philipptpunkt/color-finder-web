@@ -38,3 +38,6 @@ next-env.d.ts
 
 # New Relic
 newrelic_agent.log
+
+*storybook.log
+storybook-static

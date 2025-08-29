@@ -8,8 +8,8 @@ import { BASE_URL } from "@/components/constants"
 import "./globals.css"
 
 // const inter = Inter({ subsets: ["latin"] })
-// const raleway = Raleway({ subsets: ["latin"] })
-const kronaOne = Krona_One({ subsets: ["latin"], weight: "400" })
+const raleway = Raleway({ subsets: ["latin"] })
+// const kronaOne = Krona_One({ subsets: ["latin"], weight: "400" })
 
 export const metadata: Metadata = {
   title: "Color Finder - Create Color Palettes Easily",
@@ -49,7 +49,7 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={kronaOne.className}>
+      <body className={raleway.className}>
         <ThemeProvider
           attribute="data-theme"
           defaultTheme="system"

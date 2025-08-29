@@ -49,12 +49,20 @@
     /* Shadow colors */
     --theme-color-shadow: var(--color-shadow-light);
     --theme-color-shadow-strong: var(--color-shadow-medium);
+
+    /* Button colors - simplified approach */
+    --theme-color-button-primary: var(--color-primary-600);
+    --theme-color-button-primary-text: var(--color-neutral-50);
+    --theme-color-button-secondary: var(--color-secondary-600);
+    --theme-color-button-secondary-text: var(--color-neutral-50);
+    --theme-color-button-neutral: var(--color-neutral-800);
+    --theme-color-button-neutral-text: var(--color-neutral-50);
   }
 
   /* Dark theme */
   [data-theme="dark"] {
     /* Background colors */
-    --theme-color-background: var(--color-neutral-950);
+    --theme-color-background: var(--color-neutral-900);
     --theme-color-background-secondary: var(--color-neutral-900);
     --theme-color-background-tertiary: var(--color-neutral-800);
     --theme-color-background-muted: var(--color-muted-900);
@@ -101,5 +109,13 @@
     /* Shadow colors */
     --theme-color-shadow: var(--color-shadow-dark);
     --theme-color-shadow-strong: var(--color-shadow-heavy);
+
+    /* Button colors - simplified approach */
+    --theme-color-button-primary: var(--color-primary-200);
+    --theme-color-button-primary-text: var(--color-neutral-900);
+    --theme-color-button-secondary: var(--color-secondary-200);
+    --theme-color-button-secondary-text: var(--color-neutral-900);
+    --theme-color-button-neutral: var(--color-neutral-50);
+    --theme-color-button-neutral-text: var(--color-neutral-900);
   }
 }

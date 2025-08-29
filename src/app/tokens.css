@@ -181,6 +181,15 @@
   --color-shadow: var(--theme-color-shadow);
   --color-shadow-strong: var(--theme-color-shadow-strong);
 
+  /* === BUTTON COLORS === */
+  /* Simplified button colors - using base colors with opacity modifiers */
+  --color-button-primary: var(--theme-color-button-primary);
+  --color-button-primary-text: var(--theme-color-button-primary-text);
+  --color-button-secondary: var(--theme-color-button-secondary);
+  --color-button-secondary-text: var(--theme-color-button-secondary-text);
+  --color-button-neutral: var(--theme-color-button-neutral);
+  --color-button-neutral-text: var(--theme-color-button-neutral-text);
+
   /* === UTILITY COLORS === */
   --color-transparent: transparent;
   --color-white: oklch(100% 0 0);
