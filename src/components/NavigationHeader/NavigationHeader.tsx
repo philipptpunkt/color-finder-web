@@ -1,9 +1,7 @@
-"use client"
-
 import { cn } from "@/utils/cn"
 import { ThemeToggle } from "../ThemeChanger/ThemeToogle"
 import { Section } from "@/layout"
-import { Logo } from "@/design-system"
+import { Logo, Button } from "@/design-system"
 import Link from "next/link"
 
 export function NavigationHeader() {
@@ -35,48 +33,55 @@ export function NavigationHeader() {
           </div>
         </Link>
 
-        {/* Navigation Links */}
-        <nav className={cn(["hidden", "md:flex", "items-center", "space-x-8"])}>
-          <a
-            href="#tools"
-            className={cn([
-              "text-text-secondary",
-              "hover:text-text",
-              "transition-colors",
-              "font-medium",
-            ])}
-          >
-            Tools
-          </a>
-          <a
-            href="#features"
-            className={cn([
-              "text-text-secondary",
-              "hover:text-text",
-              "transition-colors",
-              "font-medium",
-            ])}
-          >
-            Features
-          </a>
-          <a
-            href="#about"
-            className={cn([
-              "text-text-secondary",
-              "hover:text-text",
-              "transition-colors",
-              "font-medium",
-            ])}
-          >
-            About
-          </a>
-
-          {/* Theme Toggle for Desktop */}
-          <ThemeToggle />
+        {/* Navigation Links - Centered */}
+        <nav
+          className={cn([
+            "hidden",
+            "md:flex",
+            "items-center",
+            "space-x-8",
+            "absolute",
+            "left-1/2",
+            "transform",
+            "-translate-x-1/2",
+          ])}
+        >
+          {/* <Button
+            variant="contained"
+            label="Start generating"
+            color="primary"
+            href="/generate-palettes"
+          /> */}
+          <Button
+            variant="text"
+            label="Tools"
+            color="neutral"
+            href="/css-tools"
+            width="snug"
+          />
+          <Button
+            variant="text"
+            label="Features"
+            color="neutral"
+            href="/features"
+            width="snug"
+          />
+          <Button
+            variant="text"
+            label="About"
+            color="neutral"
+            href="/about"
+            width="snug"
+          />
         </nav>
 
-        {/* Mobile Theme Toggle */}
-        <div className={cn(["md:hidden"])}>
+        <div className={cn(["flex", "items-center", "space-x-2"])}>
+          <Button
+            variant="contained"
+            label="Sign in"
+            color="neutral"
+            href="/"
+          />
           <ThemeToggle />
         </div>
       </div>

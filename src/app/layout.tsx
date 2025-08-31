@@ -58,7 +58,7 @@ export default async function RootLayout({
           <ToastProvider>
             <NavigationHeader />
             {children}
-            {/* <Footer /> */}
+            <Footer />
           </ToastProvider>
         </ThemeProvider>
       </body>

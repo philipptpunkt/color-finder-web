@@ -31,16 +31,36 @@ const socials = [
 
 export function Socials({ className }: { className?: string }) {
   return (
-    <div className={cn("flex", className)}>
+    <div className={cn("flex items-center", className)}>
       {socials.map((entry) => {
         return (
           <Link
             key={entry.id}
             href={entry.link}
             target="_blank"
-            className="mr-4 hover:scale-[110%]"
+            className={cn([
+              "w-10",
+              "h-10",
+              "bg-leaf-200/50",
+              "border",
+              "border-leaf-300",
+              "rounded-lg",
+              "flex",
+              "items-center",
+              "justify-center",
+              "text-leaf-600",
+              "hover:text-leaf-800",
+              "hover:bg-leaf-300/60",
+              "hover:border-leaf-400",
+              "hover:scale-105",
+              "transition-all",
+              "duration-200",
+              "mr-3",
+              "last:mr-0",
+            ])}
+            title={entry.title}
           >
-            <Icon iconName={entry.icon} />
+            <Icon iconName={entry.icon} className="w-5 h-5" />
           </Link>
         )
       })}

@@ -8,7 +8,7 @@ const buttonVariants = cva(
     "inline-flex",
     "items-center",
     "justify-center",
-    "font-light",
+    "font-medium",
     "transition-all",
     "duration-200",
     "focus:outline-none",

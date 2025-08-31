@@ -2,7 +2,7 @@ import { AnimatedPalette } from "@/components/AnimatedPalette/AnimatedPalette"
 import { cn } from "@/utils/cn"
 import { Button } from "@/design-system"
 
-export default function HeroSection() {
+export function HeroSection() {
   return (
     <section
       className={cn([

@@ -1,4 +1,4 @@
-import HeroSection from "./_components/HeroSection"
+import { HeroSection } from "./_components/HeroSection"
 import { ToolsSection } from "./_components/ToolsSection"
 import { FeaturesSection } from "./_components/FeaturesSection"
 import { CTASection } from "./_components/CTASection"

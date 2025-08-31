@@ -42,6 +42,7 @@ export function DefaultCard({
           "dark:from-neutral-700",
           "dark:to-neutral-800",
           "rounded-lg",
+          "h-[content-fit]",
         ],
         className
       )}
