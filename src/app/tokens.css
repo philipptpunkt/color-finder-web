@@ -104,32 +104,16 @@
   --color-error-900: oklch(18% 0.08 25);
   --color-error-950: oklch(12% 0.05 25);
 
-  /* === CUSTOM DYNAMIC COLORS === */
-  /* For user-generated color palettes */
-  --color-custom-50: rgb(var(--custom-color-50));
-  --color-custom-100: rgb(var(--custom-color-100));
-  --color-custom-200: rgb(var(--custom-color-200));
-  --color-custom-300: rgb(var(--custom-color-300));
-  --color-custom-400: rgb(var(--custom-color-400));
-  --color-custom-500: rgb(var(--custom-color-500));
-  --color-custom-600: rgb(var(--custom-color-600));
-  --color-custom-700: rgb(var(--custom-color-700));
-  --color-custom-800: rgb(var(--custom-color-800));
-  --color-custom-900: rgb(var(--custom-color-900));
-  --color-custom-950: rgb(var(--custom-color-950));
-
   /* === SURFACE COLORS === */
   /* Background colors - referencing theme variables */
   --color-background: var(--theme-color-background);
+  --color-background-inverted: var(--theme-color-background-inverted);
+
   --color-background-secondary: var(--theme-color-background-secondary);
   --color-background-tertiary: var(--theme-color-background-tertiary);
   --color-background-muted: var(--theme-color-background-muted);
   --color-background-highlight: var(--theme-color-background-highlight);
-  --color-background-inverted: var(--theme-color-background-inverted);
   --color-background-primary: var(--theme-color-background-primary);
-  --color-background-secondary-color: var(
-    --theme-color-background-secondary-color
-  );
 
   /* === TEXT COLORS === */
   /* Text colors - referencing theme variables */

@@ -1,6 +1,5 @@
 import { AnimatedPalette } from "@/components/AnimatedPalette/AnimatedPalette"
 import { cn } from "@/utils/cn"
-import Link from "next/link"
 import { Button } from "@/design-system"
 
 export default function HeroSection() {
@@ -26,9 +25,13 @@ export default function HeroSection() {
         />
       </div>
       <AnimatedPalette />
-      <Link className="text-gray-50 absolut bottom-0" href="/colors">
-        more
-      </Link>
+      <Button
+        label="more"
+        variant="text"
+        size="s"
+        href="/colors"
+        className="absolute bottom-8"
+      />
     </section>
   )
 }

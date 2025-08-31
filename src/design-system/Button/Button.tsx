@@ -172,23 +172,25 @@ const buttonVariants = cva(
 export interface ButtonProps
   extends Omit<
       React.ButtonHTMLAttributes<HTMLButtonElement>,
-      "color" | "className" | "class" | "style" | "children"
+      "color" | "class" | "style" | "children"
     >,
     VariantProps<typeof buttonVariants> {
   label: string
   href?: string
   width?: "full" | "wide" | "narrow" | "snug"
+  className?: string
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ variant, color, size, width, label, href, ...props }, ref) => {
+  ({ variant, color, size, width, label, href, className, ...props }, ref) => {
     const buttonClasses = cn(
       buttonVariants({
         variant,
         color: color as "primary" | "secondary" | "neutral",
         size,
         width,
-      })
+      }),
+      className
     )
 
     if (href) {

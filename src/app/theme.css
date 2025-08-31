@@ -3,13 +3,13 @@
   :root {
     /* Background colors */
     --theme-color-background: var(--color-neutral-50);
+    --theme-color-background-inverted: var(--color-neutral-900);
+
     --theme-color-background-secondary: var(--color-neutral-100);
     --theme-color-background-tertiary: var(--color-neutral-200);
     --theme-color-background-muted: var(--color-muted-50);
     --theme-color-background-highlight: var(--color-neutral-100);
-    --theme-color-background-inverted: var(--color-neutral-950);
     --theme-color-background-primary: var(--color-primary-50);
-    --theme-color-background-secondary-color: var(--color-secondary-50);
 
     /* Text colors */
     --theme-color-text: var(--color-neutral-900);
@@ -63,13 +63,13 @@
   [data-theme="dark"] {
     /* Background colors */
     --theme-color-background: var(--color-neutral-900);
+    --theme-color-background-inverted: var(--color-neutral-50);
+
     --theme-color-background-secondary: var(--color-neutral-900);
     --theme-color-background-tertiary: var(--color-neutral-800);
     --theme-color-background-muted: var(--color-muted-900);
     --theme-color-background-highlight: var(--color-neutral-800);
-    --theme-color-background-inverted: var(--color-neutral-50);
     --theme-color-background-primary: var(--color-primary-950);
-    --theme-color-background-secondary-color: var(--color-secondary-950);
 
     /* Text colors */
     --theme-color-text: var(--color-neutral-100);
