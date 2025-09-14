@@ -118,13 +118,21 @@
   /* === TEXT COLORS === */
   /* Text colors - referencing theme variables */
   --color-text: var(--theme-color-text);
-  --color-text-secondary: var(--theme-color-text-secondary);
-  --color-text-tertiary: var(--theme-color-text-tertiary);
-  --color-text-muted: var(--theme-color-text-muted);
+  --color-text-content: var(--theme-color-text-content);
+  --color-text-light: var(--theme-color-text-light);
   --color-text-label: var(--theme-color-text-label);
   --color-text-inverted: var(--theme-color-text-inverted);
+
+  --color-text-menu: var(--theme-color-text-menu);
+  --color-text-menu-hover: var(--theme-color-text-menu-hover);
+
+  --color-text-link: var(--theme-color-text-link);
+  --color-text-link-hover: var(--theme-color-text-link-hover);
+
   --color-text-primary: var(--theme-color-text-primary);
-  --color-text-secondary-color: var(--theme-color-text-secondary-color);
+
+  --color-text-secondary: var(--theme-color-text-secondary);
+  --color-text-tertiary: var(--theme-color-text-tertiary);
 
   /* === BORDER COLORS === */
   /* Border colors - referencing theme variables */
@@ -174,6 +182,15 @@
   --color-button-neutral: var(--theme-color-button-neutral);
   --color-button-neutral-text: var(--theme-color-button-neutral-text);
 
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
   /* === UTILITY COLORS === */
   --color-transparent: transparent;
   --color-white: oklch(100% 0 0);
@@ -188,6 +205,10 @@
   --animate-scale-out: scaleOut 200ms ease;
   --animate-fade-in: fadeIn 200ms ease;
   --animate-fade-out: fadeOut 200ms ease;
+  --animate-sidebar-expand: sidebarExpand 300ms ease-out;
+  --animate-sidebar-collapse: sidebarCollapse 300ms ease-in;
+  --animate-submenu-open: submenuOpen 250ms ease-out;
+  --animate-submenu-close: submenuClose 200ms ease-in;
 
   /* === TRANSFORMS === */
   --rotate-270: 270deg;
@@ -274,5 +295,49 @@
   }
   to {
     opacity: 0;
+  }
+}
+
+@keyframes sidebarExpand {
+  from {
+    width: 4rem;
+  }
+  to {
+    width: 16rem;
+  }
+}
+
+@keyframes sidebarCollapse {
+  from {
+    width: 16rem;
+  }
+  to {
+    width: 4rem;
+  }
+}
+
+@keyframes submenuOpen {
+  from {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+    transform: translateY(0);
+  }
+}
+
+@keyframes submenuClose {
+  from {
+    opacity: 1;
+    max-height: 500px;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-8px);
   }
 }

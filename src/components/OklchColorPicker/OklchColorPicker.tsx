@@ -36,7 +36,7 @@ export function OklchColorPicker({
   return (
     <div className={cn(["space-y-4", className])}>
       {/* Color Preview */}
-      <div className="flex items-center gap-3">
+      {/* <div className="flex items-center gap-3">
         <div
           className="w-12 h-12 rounded-lg border border-border shadow-sm"
           style={{ backgroundColor: cssPreview }}
@@ -45,7 +45,7 @@ export function OklchColorPicker({
           <div className="text-sm font-medium text-text">OKLCH Color</div>
           <div className="text-xs text-text-label font-mono">{cssPreview}</div>
         </div>
-      </div>
+      </div> */}
 
       {/* Lightness Control */}
       <div className="space-y-2">
@@ -109,7 +109,7 @@ export function OklchColorPicker({
             style={{
               background: `linear-gradient(to right, 
                 oklch(${localValue.l} 0 ${localValue.h}), 
-                oklch(${localValue.l} 0.4 ${localValue.h}))`
+                oklch(${localValue.l} 0.4 ${localValue.h}))`,
             }}
             className={cn([
               "w-full",
@@ -155,7 +155,7 @@ export function OklchColorPicker({
                 oklch(0.7 0.15 180), 
                 oklch(0.7 0.15 240), 
                 oklch(0.7 0.15 300), 
-                oklch(0.7 0.15 360))`
+                oklch(0.7 0.15 360))`,
             }}
             className={cn([
               "w-full",

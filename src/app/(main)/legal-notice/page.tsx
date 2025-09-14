@@ -47,17 +47,6 @@ export default async function LegalNoticePage({ searchParams }: Props) {
               Information according to § 5 TMG (Telemediengesetz):
             </strong>
           </p>
-          <Section>
-            <p>
-              Philipp Trentmann
-              <br />
-              Carl-Schurz-Straße 61
-              <br />
-              28209 Bremen
-              <br />
-              Germany
-            </p>
-          </Section>
 
           <p>
             <strong>Contact:</strong>

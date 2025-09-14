@@ -18,7 +18,7 @@ export default function GeneratePalettesPage() {
     c: 0.15,
     h: 230,
   })
-  
+
   // Secondary color settings (optional)
   const [hasSecondaryColor, setHasSecondaryColor] = useState(false)
   const [secondaryColor, setSecondaryColor] = useState<OklchColor>({
@@ -33,7 +33,7 @@ export default function GeneratePalettesPage() {
   const [maxLightness, setMaxLightness] = useState(0.95)
   const [chromaReduction, setChromaReduction] = useState(0.8)
   const [hueShift, setHueShift] = useState(-0.1)
-  
+
   // UI state
   const [copiedColor, setCopiedColor] = useState<string | null>(null)
 
@@ -54,10 +54,18 @@ export default function GeneratePalettesPage() {
       chromaReduction,
       hueShift
     )
-  }, [hasSecondaryColor, secondaryColor, paletteSize, chromaReduction, hueShift])
+  }, [
+    hasSecondaryColor,
+    secondaryColor,
+    paletteSize,
+    chromaReduction,
+    hueShift,
+  ])
 
   const handleColorCopy = async (color: OklchColor) => {
-    const oklchString = `oklch(${color.l.toFixed(3)} ${color.c.toFixed(3)} ${color.h.toFixed(1)})`
+    const oklchString = `oklch(${color.l.toFixed(3)} ${color.c.toFixed(
+      3
+    )} ${color.h.toFixed(1)})`
     await copyTextToClipboard(oklchString)
     setCopiedColor(oklchString)
     setTimeout(() => setCopiedColor(null), 2000)
@@ -93,7 +101,8 @@ export default function GeneratePalettesPage() {
             Expert Palette Generator
           </h1>
           <p className="text-xl text-text-label max-w-2xl mx-auto">
-            Advanced tools for creating professional color palettes with precise OKLCH control
+            Advanced tools for creating professional color palettes with precise
+            OKLCH control
           </p>
         </motion.div>
 
@@ -106,14 +115,18 @@ export default function GeneratePalettesPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             {/* Primary Color */}
-            <div className={cn([
-              "p-6",
-              "bg-background-highlight",
-              "rounded-2xl",
-              "border",
-              "border-border",
-            ])}>
-              <h3 className="text-lg font-semibold text-text mb-4">Primary Color</h3>
+            <div
+              className={cn([
+                "p-6",
+                "bg-background-highlight",
+                "rounded-2xl",
+                "border",
+                "border-border",
+              ])}
+            >
+              <h3 className="text-lg font-semibold text-text mb-4">
+                Primary Color
+              </h3>
               <OklchColorPicker
                 value={primaryColor}
                 onChange={setPrimaryColor}
@@ -121,15 +134,19 @@ export default function GeneratePalettesPage() {
             </div>
 
             {/* Secondary Color */}
-            <div className={cn([
-              "p-6",
-              "bg-background-highlight",
-              "rounded-2xl",
-              "border",
-              "border-border",
-            ])}>
+            <div
+              className={cn([
+                "p-6",
+                "bg-background-highlight",
+                "rounded-2xl",
+                "border",
+                "border-border",
+              ])}
+            >
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-text">Secondary Color</h3>
+                <h3 className="text-lg font-semibold text-text">
+                  Secondary Color
+                </h3>
                 <label className="flex items-center space-x-2">
                   <input
                     type="checkbox"
@@ -149,15 +166,19 @@ export default function GeneratePalettesPage() {
             </div>
 
             {/* Advanced Settings */}
-            <div className={cn([
-              "p-6",
-              "bg-background-highlight",
-              "rounded-2xl",
-              "border",
-              "border-border",
-            ])}>
-              <h3 className="text-lg font-semibold text-text mb-4">Advanced Settings</h3>
-              
+            <div
+              className={cn([
+                "p-6",
+                "bg-background-highlight",
+                "rounded-2xl",
+                "border",
+                "border-border",
+              ])}
+            >
+              <h3 className="text-lg font-semibold text-text mb-4">
+                Advanced Settings
+              </h3>
+
               <div className="space-y-4">
                 {/* Palette Size */}
                 <div>
@@ -241,13 +262,15 @@ export default function GeneratePalettesPage() {
             </div>
 
             {/* Export Options */}
-            <div className={cn([
-              "p-6",
-              "bg-background-highlight",
-              "rounded-2xl",
-              "border",
-              "border-border",
-            ])}>
+            <div
+              className={cn([
+                "p-6",
+                "bg-background-highlight",
+                "rounded-2xl",
+                "border",
+                "border-border",
+              ])}
+            >
               <h3 className="text-lg font-semibold text-text mb-4">Export</h3>
               <button
                 onClick={exportAsCSS}
@@ -277,12 +300,16 @@ export default function GeneratePalettesPage() {
           >
             {/* Primary Palette */}
             <div>
-              <h3 className="text-xl font-semibold text-text mb-4">Primary Palette</h3>
+              <h3 className="text-xl font-semibold text-text mb-4">
+                Primary Palette
+              </h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
                 {primaryPalette.map((color, index) => {
                   const step = index === 0 ? 50 : (index - 1) * 100 + 100
-                  const oklchString = `oklch(${color.l.toFixed(3)} ${color.c.toFixed(3)} ${color.h.toFixed(1)})`
-                  
+                  const oklchString = `oklch(${color.l.toFixed(
+                    3
+                  )} ${color.c.toFixed(3)} ${color.h.toFixed(1)})`
+
                   return (
                     <motion.div
                       key={`primary-${index}`}
@@ -303,26 +330,30 @@ export default function GeneratePalettesPage() {
                       whileTap={{ scale: 0.95 }}
                       transition={{ duration: 0.2 }}
                     >
-                      <div className={cn([
-                        "absolute",
-                        "inset-0",
-                        "bg-black/60",
-                        "opacity-0",
-                        "group-hover:opacity-100",
-                        "transition-opacity",
-                        "duration-200",
-                        "flex",
-                        "flex-col",
-                        "items-center",
-                        "justify-center",
-                        "text-white",
-                        "text-xs",
-                        "font-medium",
-                        "p-2",
-                        "text-center",
-                      ])}>
+                      <div
+                        className={cn([
+                          "absolute",
+                          "inset-0",
+                          "bg-black/60",
+                          "opacity-0",
+                          "group-hover:opacity-100",
+                          "transition-opacity",
+                          "duration-200",
+                          "flex",
+                          "flex-col",
+                          "items-center",
+                          "justify-center",
+                          "text-white",
+                          "text-xs",
+                          "font-medium",
+                          "p-2",
+                          "text-center",
+                        ])}
+                      >
                         <div className="mb-1">{step}</div>
-                        <div className="text-[10px] opacity-80">{oklchString}</div>
+                        <div className="text-[10px] opacity-80">
+                          {oklchString}
+                        </div>
                         <div className="text-[10px] mt-1">Click to copy</div>
                       </div>
                     </motion.div>
@@ -334,12 +365,16 @@ export default function GeneratePalettesPage() {
             {/* Secondary Palette */}
             {hasSecondaryColor && secondaryPalette.length > 0 && (
               <div>
-                <h3 className="text-xl font-semibold text-text mb-4">Secondary Palette</h3>
+                <h3 className="text-xl font-semibold text-text mb-4">
+                  Secondary Palette
+                </h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
                   {secondaryPalette.map((color, index) => {
                     const step = index === 0 ? 50 : (index - 1) * 100 + 100
-                    const oklchString = `oklch(${color.l.toFixed(3)} ${color.c.toFixed(3)} ${color.h.toFixed(1)})`
-                    
+                    const oklchString = `oklch(${color.l.toFixed(
+                      3
+                    )} ${color.c.toFixed(3)} ${color.h.toFixed(1)})`
+
                     return (
                       <motion.div
                         key={`secondary-${index}`}
@@ -360,26 +395,30 @@ export default function GeneratePalettesPage() {
                         whileTap={{ scale: 0.95 }}
                         transition={{ duration: 0.2 }}
                       >
-                        <div className={cn([
-                          "absolute",
-                          "inset-0",
-                          "bg-black/60",
-                          "opacity-0",
-                          "group-hover:opacity-100",
-                          "transition-opacity",
-                          "duration-200",
-                          "flex",
-                          "flex-col",
-                          "items-center",
-                          "justify-center",
-                          "text-white",
-                          "text-xs",
-                          "font-medium",
-                          "p-2",
-                          "text-center",
-                        ])}>
+                        <div
+                          className={cn([
+                            "absolute",
+                            "inset-0",
+                            "bg-black/60",
+                            "opacity-0",
+                            "group-hover:opacity-100",
+                            "transition-opacity",
+                            "duration-200",
+                            "flex",
+                            "flex-col",
+                            "items-center",
+                            "justify-center",
+                            "text-white",
+                            "text-xs",
+                            "font-medium",
+                            "p-2",
+                            "text-center",
+                          ])}
+                        >
                           <div className="mb-1">{step}</div>
-                          <div className="text-[10px] opacity-80">{oklchString}</div>
+                          <div className="text-[10px] opacity-80">
+                            {oklchString}
+                          </div>
                           <div className="text-[10px] mt-1">Click to copy</div>
                         </div>
                       </motion.div>

@@ -1,10 +1,8 @@
 import type { Metadata } from "next"
 import { Krona_One, Raleway } from "next/font/google"
 import { ThemeProvider } from "next-themes"
-import { Footer } from "@/components/Footer/Footer"
 import { ToastProvider } from "@/design-system/Toast/ToastProvider"
 import { BASE_URL } from "@/components/constants"
-import { NavigationHeader } from "@/components/NavigationHeader/NavigationHeader"
 import "./globals.css"
 
 // const inter = Inter({ subsets: ["latin"] })
@@ -55,11 +53,7 @@ export default async function RootLayout({
           defaultTheme="system"
           enableSystem
         >
-          <ToastProvider>
-            <NavigationHeader />
-            {children}
-            <Footer />
-          </ToastProvider>
+          <ToastProvider>{children}</ToastProvider>
         </ThemeProvider>
       </body>
     </html>
